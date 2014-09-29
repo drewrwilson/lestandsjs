@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="lestands">
+    <meta name="keyword" content="">
+
+    <title>leStands</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" >
+      <!--header start-->
+      <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="#" class="logo">le<span>Stands</span></a>
+            <!--logo end-->
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                  <li>
+                     <button onclick="location.href='#'" class="btn btn-primary btn-lg hidden-s hidden-xs"><i class="icon-plus"></i> Add an update</button>
+                  </li>
+									<!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="http://www.gravatar.com/avatar/3f857250fc1f4a5d2d06f857f8e37108?d=mm&s=40">
+                            <span class="username">amber</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+														                            <li><a href="#"><i class="icon-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+      <!--header end-->
+
+<!--sidebar start-->
+<aside>
+    <div id="sidebar"  class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+            <li>
+                <a class="" href="#">
+                    <i class="icon-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="icon-plus"></i>
+                    <span>Add an update</span>
+                </a>
+            </li>
+
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+						<div class="row">
+						    <div class="col-lg-12">
+									<h1 >
+									    All your stands
+									</h1>
+								</div>
+							</div>
+
+              <!--state overview start-->
+              <div class="row state-overview hidden-xs">
+                  <div class="col-lg-3 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol terques">
+                              <i class="icon-bar-chart"></i>
+                          </div>
+                          <div class="value">
+                              <h1>555</h1>
+                              <p>Total Distributed</p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol red">
+                              <i class="icon-check"></i>
+                          </div>
+                          <div class="value">
+                              <h1>9</h1>
+                              <p>Total Number of Updates</p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol yellow">
+                              <i class="icon-map-marker"></i>
+                          </div>
+                          <div class="value">
+                              <h1>1</h1>
+                              <p>Number of Stands</p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol blue">
+                              <i class="icon-calendar"></i>
+                          </div>
+                          <div class="value">
+                              <h1>197</h1>
+                              <p>Days since Last checked</p>
+                          </div>
+                      </section>
+                  </div>
+              </div>
+
+
+<div class="row visible-xs">
+    <div class="col-xs-12 ">
+			<a href="#" class="btn btn-primary btn-block"><i class="icon-plus"></i> Add an update</a>
+		</div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                List of your stands
+            </header>
+            <div class="panel-body">
+                <section id="unseen">
+                  <table class="table table-bordered table-striped table-condensed">
+                    <thead>
+                    <tr>
+                      <tr>
+													<th><i class="icon-calendar"></i> Last checked</th>
+                          <th><i class="icon-bullhorn"></i> Stand name</th>
+                          <th class="hidden-xs"><i class="icon-question-sign"></i> Description</th>
+
+													<th class="hidden-xs"><i class="icon-calendar"></i> Date Deployed</th>
+													<th><i class="icon-bolt"></i> Actions</th>
+                      </tr>
+                    </tr>
+                    </thead>
+                    <tbody>
+											                    <tr>
+                        <td class=" text-center"><span class="label
+													label-danger													">  <i class="icon-warning-sign"></i>  197 days ago</span></td>
+                        <td><a href="#">University Ave. & Marshall St.</a></td>
+                        <td class="hidden-xs">Amber's stand n...</td>
+													                        <td class="hidden-xs">Aug 20, 2013</td>
+                        <td class="text-center">
+													<a href="#" alt="view this stand" class="btn btn-warning btn-xs"><i class=" icon-eye-open"></i></a>
+													<a href="#" alt="add an update" class="btn btn-primary btn-xs"><i class="icon-plus"></i></a>
+                          <a href="#" alt="edit stand" class="btn btn-success btn-xs"><i class="icon-pencil"></i></a>
+												</td>
+
+                    </tr>
+										                    </tbody>
+                </table>
+                </section>
+            </div>
+        </section>
+    </div>
+</div>
+
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+
+    <!--scripts for backbone-->
+    <script src="assets/js/backbone.js"></script>
+    <script src="app.js"></script>
+
+
+  </body>
+</html>
