@@ -1,8 +1,8 @@
-var Stand = Backbone.Model.extend({});
+var Stand = Backbone.Model.extend({url:'stands/'});
 
 var stands = Backbone.Collection.extend({
     model: Stand,
-    url: 'http://private-159b-lestands.apiary-mock.com/stands',
+    url: '',
     initialize: function() {
         this.fetch();
     }
