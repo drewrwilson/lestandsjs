@@ -9,14 +9,19 @@ var Stands = Backbone.Collection.extend({
 });
 
 ExampleView = Backbone.View.extend({
+    template: Handlebars.compile( $("#big-numbers-template").html() ),
     initialize: function(){
             this.render();
         },
     render: function(){
           // Compile the template using underscore
-          var template = _.template( $("#big-numbers-template").html(),  {});
+          // var template = _.template( );
+          // todo: mustache, data from collection as opposed to hard coding it
+
+          var html = this.template({length: "5"});
+          console.log( html );
           // Load the compiled HTML into the Backbone "el"
-          this.$el.html( template );
+          this.$el.html( html );
       }
 });
 
