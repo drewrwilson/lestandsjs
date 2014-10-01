@@ -145,13 +145,12 @@
                           </div>
                           <div class="value">
                               <h1>{{ daysSinceChecked }}</h1>
-                              <p>Days since Last checked</p>
+                              <p>Days since last checked</p>
                           </div>
                       </section>
                   </div>
               </div>
 
-            </script>
 
 
 <div class="row visible-xs">
@@ -182,27 +181,30 @@
                     </tr>
                     </thead>
                     <tbody>
-											                    <tr>
-                        <td class=" text-center"><span class="label
-													label-danger													">  <i class="icon-warning-sign"></i>  197 days ago</span></td>
-                        <td><a href="#">University Ave. & Marshall St.</a></td>
-                        <td class="hidden-xs">Amber's stand n...</td>
-													                        <td class="hidden-xs">Aug 20, 2013</td>
-                        <td class="text-center">
-													<a href="#" alt="view this stand" class="btn btn-warning btn-xs"><i class=" icon-eye-open"></i></a>
-													<a href="#" alt="add an update" class="btn btn-primary btn-xs"><i class="icon-plus"></i></a>
-                          <a href="#" alt="edit stand" class="btn btn-success btn-xs"><i class="icon-pencil"></i></a>
-												</td>
-
-                    </tr>
-										                    </tbody>
+                    {{#stands}}
+  										<tr>
+                          <td class=" text-center"><span class="label
+  													label-danger">
+                            <i class="icon-warning-sign"></i>
+                            daysSinceUpdated</span></td>
+                          <td><a href="#">{{name}}</a></td>
+                          <td class="hidden-xs">{{description}}</td>
+                          <td class="hidden-xs">{{dateDeployed}}</td>
+                          <td class="text-center">
+  													<a href="#" alt="view this stand" class="btn btn-warning btn-xs"><i class=" icon-eye-open"></i></a>
+  													<a href="#" alt="add an update" class="btn btn-primary btn-xs"><i class="icon-plus"></i></a>
+                            <a href="#" alt="edit stand" class="btn btn-success btn-xs"><i class="icon-pencil"></i></a>
+  												</td>
+                      </tr>
+                    {{/stands}}
+                    </tbody>
                 </table>
                 </section>
             </div>
         </section>
     </div>
 </div>
-
+</script>
           </section>
       </section>
       <!--main content end-->

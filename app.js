@@ -1,10 +1,17 @@
-var Stand = Backbone.Model.extend();
+var Stand = Backbone.Model.extend({
+  // this function returns the number of days since the last update on this model
+  daysSinceUpdated: function () {
+    var today = new Date(),
+        lastUpdated = new Date ( this.get('lastUpdateDate') );
+    return Math.floor( (today - lastUpdated) / (1000 * 60 * 60 * 24) );
+  }
+});
 
 var Stands = Backbone.Collection.extend({
     url: 'http://private-159b-lestands.apiary-mock.com/stands',
     model: Stand,
     initialize: function() {
-        this.fetch();
+        this.fetch({reset: true});
     },
 });
 
@@ -13,7 +20,7 @@ var stands = new Stands();
 var StandsView = Backbone.View.extend({
     template: Handlebars.compile( $("#big-numbers-template").html() ),
     initialize: function(){
-            this.listenTo(this.collection, 'all', this.render);
+            this.listenTo(this.collection, 'reset', this.render);
         },
     render: function(){
           // Compile the template using underscore
@@ -23,10 +30,12 @@ var StandsView = Backbone.View.extend({
             totalDistributed: 0,
             totalUpdates: 0,
             totalStands: 0,
-            daysSinceChecked: null
+            daysSinceChecked: null,
+            stands:[]
           }
 
           var mostRecentUpdate = null;
+
 
           this.collection.each(function(stand){
             stand = stand.attributes;
@@ -40,6 +49,9 @@ var StandsView = Backbone.View.extend({
               mostRecentUpdate = thisLastUpdated;
             }
             console.log(stand);
+
+            view.stands.push(stand);
+
           }, this);
 
           today = new Date();
@@ -47,7 +59,7 @@ var StandsView = Backbone.View.extend({
 
           html = this.template(view);
           this.$el.html(html)
-          console.log(html)
+          // console.log(html)
       }
 });
 
@@ -55,5 +67,3 @@ var standsView = new StandsView({
   el: $("#big-numbers-container"),
   collection: stands,
 });
-
-
