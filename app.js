@@ -3,39 +3,57 @@ var Stand = Backbone.Model.extend();
 var Stands = Backbone.Collection.extend({
     url: 'http://private-159b-lestands.apiary-mock.com/stands',
     model: Stand,
-    initialize: function(init) {
-        this.fetch({success:init});
-    }
+    initialize: function() {
+        this.fetch();
+    },
 });
 
-ExampleView = Backbone.View.extend({
+var stands = new Stands();
+
+var StandsView = Backbone.View.extend({
     template: Handlebars.compile( $("#big-numbers-template").html() ),
     initialize: function(){
-            this.render();
+            this.listenTo(this.collection, 'all', this.render);
         },
     render: function(){
           // Compile the template using underscore
-          // var template = _.template( );
-          // todo: mustache, data from collection as opposed to hard coding it
 
-          var html = this.template({length: "5"});
-          console.log( html );
-          // Load the compiled HTML into the Backbone "el"
-          this.$el.html( html );
+          // todo this should be recalculated when the model changes, not when it is re-rendered.
+          var view = {
+            totalDistributed: 0,
+            totalUpdates: 0,
+            totalStands: 0,
+            daysSinceChecked: null
+          }
+
+          var mostRecentUpdate = null;
+
+          this.collection.each(function(stand){
+            stand = stand.attributes;
+            view.totalDistributed += stand.totalDistributed;
+            view.totalUpdates += stand.totalUpdates;
+            view.totalStands++;
+            thisLastUpdated = stand.lastUpdateDate ? new Date(stand.lastUpdateDate): null;
+            if (mostRecentUpdate == null) {
+              mostRecentUpdate = new Date(stand.lastUpdateDate);
+            } else if ( thisLastUpdated < mostRecentUpdate) {
+              mostRecentUpdate = thisLastUpdated;
+            }
+            console.log(stand);
+          }, this);
+
+          today = new Date();
+          view.daysSinceChecked = Math.floor((today - mostRecentUpdate) / (1000*60*60*24));
+
+          html = this.template(view);
+          this.$el.html(html)
+          console.log(html)
       }
 });
 
-var exampleView = new ExampleView({ el: $("#big-numbers-container") });
+var standsView = new StandsView({
+  el: $("#big-numbers-container"),
+  collection: stands,
+});
 
 
-function init () {
-  // var bigNumbersTemplate = _.template( $('#big-numbers').html() );
-  // bigNumbersTemplate(myStands.toJSON());
-
-
-
-
-  console.log(myStands.toJSON());
-}
-
-var myStands = new Stands(init);
