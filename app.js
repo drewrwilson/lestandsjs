@@ -15,20 +15,15 @@ Handlebars.registerHelper("daysSince", daysSince);
 
 Handlebars.registerHelper("iconFor", function(date) {
   var numDaysSince = daysSince(date);
-  var htmlOutput = '';
 
-  switch (numDaysSince) {
-    case (numDaysSince <= 7):
-      htmlOutput = 'fa-heart';
-      break;
-    case (numDaysSince <= 21):
-      htmlOutput = 'fa-check';
-      break;
-    case (numDaysSince > 21) :
-      htmlOutput = 'fa-warning-sign';
-      break;
+  switch (true) {
+    case numDaysSince <= 7:
+      return 'fa-heart';
+    case numDaysSince <= 21:
+      return 'fa-check';
+    case numDaysSince > 21:
+      return 'fa-warning';
   }
-  return htmlOutput;
 });
 
 
