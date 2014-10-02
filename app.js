@@ -25,7 +25,7 @@ Handlebars.registerHelper("iconFor", function(date) {
       htmlOutput = 'fa-check';
       break;
     case (numDaysSince > 21) :
-      htmlOutput = 'icon-warning-sign';
+      htmlOutput = 'fa-warning-sign';
       break;
   }
   return htmlOutput;
