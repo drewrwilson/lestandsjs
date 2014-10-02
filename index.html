@@ -184,10 +184,10 @@
                     <tbody>
                     {{#stands}}
   										<tr>
-                          <td class=" text-center"><span class="label
+                          <td class=" text-center"><time title="{{lastUpdateDate}}" datetime="{{lastUpdateDate}}" class="label
   													{{labelFor lastUpdateDate}}">
                             <i class="fa {{iconFor lastUpdateDate}}"></i>
-                            {{daysSince lastUpdateDate }} days</span></td>
+                            {{daysSince lastUpdateDate }} days</time></td>
                           <td><a href="#">{{name}}</a></td>
                           <td class="hidden-xs">{{description}}</td>
                           <td class="hidden-xs">{{dateDeployed}}</td>
