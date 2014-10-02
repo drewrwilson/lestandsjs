@@ -1,9 +1,20 @@
+//this assumes we get a valid date string, returns days since a given date
+Handlebars.registerHelper("daysSince", function(date) {
+  var givenDate = new Date(date),
+      today = new Date();
+  return Math.floor( (today - givenDate) / (1000 * 60 * 60 * 24));
+});
+
 var Stand = Backbone.Model.extend({
   // this function returns the number of days since the last update on this model
   daysSinceUpdated: function () {
     var today = new Date(),
         lastUpdated = new Date ( this.get('lastUpdateDate') );
     return Math.floor( (today - lastUpdated) / (1000 * 60 * 60 * 24) );
+  }
+,
+  initialize: function () {
+    this.set('')
   }
 });
 
