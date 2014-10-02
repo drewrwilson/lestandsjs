@@ -26,6 +26,20 @@ Handlebars.registerHelper("iconFor", function(date) {
   }
 });
 
+Handlebars.registerHelper("labelFor", function(date) {
+  var numDaysSince = daysSince(date);
+
+  switch (true) {
+    case numDaysSince <= 7:
+      return 'label-success';
+    case numDaysSince <= 21:
+      return 'label-info';
+    case numDaysSince <= 30:
+      return 'label-warning';
+    case numDaysSince > 30:
+      return 'label-danger';
+  }
+});
 
 
 
