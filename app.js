@@ -1,9 +1,44 @@
-//this assumes we get a valid date string, returns days since a given date
-Handlebars.registerHelper("daysSince", function(date) {
+/*
+*************************
+Handlebars functions
+*************************
+*/
+
+var daysSince = function(date) {
   var givenDate = new Date(date),
       today = new Date();
   return Math.floor( (today - givenDate) / (1000 * 60 * 60 * 24));
+}
+
+//this assumes we get a valid date string, returns days since a given date
+Handlebars.registerHelper("daysSince", daysSince);
+
+Handlebars.registerHelper("iconFor", function(date) {
+  var numDaysSince = daysSince(date);
+  var htmlOutput = '';
+
+  switch (numDaysSince) {
+    case (numDaysSince <= 7):
+      htmlOutput = 'fa-heart';
+      break;
+    case (numDaysSince <= 21):
+      htmlOutput = 'fa-check';
+      break;
+    case (numDaysSince > 21) :
+      htmlOutput = 'icon-warning-sign';
+      break;
+  }
+  return htmlOutput;
 });
+
+
+
+
+/*
+*************************
+Backbone functions
+*************************
+*/
 
 var Stand = Backbone.Model.extend({
   // this function returns the number of days since the last update on this model
