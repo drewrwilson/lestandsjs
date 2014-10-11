@@ -1,18 +1,18 @@
 lestandsJS
 ==========
 
-## What is leStands?
+# What is leStands?
 [leStands](http://lestands.com) is a web application that helps volunteers all over the country track the performance of free literature stands.
 
 This is a new javascript version of [lestands](http://lestands.com). leStands is primarily a frontend application with a lightweight API backend.
 
 Made by Drew and Peter.
 
-### Tools used
+## Tools used
 * Frontend: The frontend uses BackboneJS, UnderscoreJS, jQuery, Bootstrap, FontAwesome, and HandlebarsJS.
 * Backend: Right now the backend is a static mockup of an RESTful json API. In the future it will be a NodeJS Express application. We have not yet decided what kind of datastore we will use.
 
-## How do I run application locally?
+# How do I run application locally?
 1. clone the repo to your local machine:
 
   `git clone xxx `
