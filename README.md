@@ -14,10 +14,13 @@ Made by Drew and Peter.
 
 ## How do I run application locally?
 1. clone the repo to your local machine:
+
   `git clone xxx `
 2. change directories to your new directory:
+
   `cd xxx`
 3. run a local server
+
   ` python -m SimpleHTTPServer 8000 `
 4. open your brower and point it to: http://localhost:8000/
 
