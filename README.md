@@ -13,7 +13,7 @@ Made by Drew and Peter.
 * Backend: Right now the backend is a static mockup of an RESTful json API. In the future it will be a NodeJS Express application. We have not yet decided what kind of datastore we will use.
 
 # How do I run application locally?
-1. clone the repo to your local machine:
+1. fork then clone this repo to your local machine:
 
   `git clone xxx `
 2. change directories to your new directory:
