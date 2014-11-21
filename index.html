@@ -152,60 +152,58 @@
                   </div>
               </div>
 
+              <div class="row visible-xs">
+                  <div class="col-xs-12 ">
+              			<a href="#" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add an update</a>
+              		</div>
+              </div>
 
+              <div class="row">
+                  <div class="col-lg-12">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              List of your stands
+                          </header>
+                          <div class="panel-body">
+                              <section id="unseen">
+                                <table class="table table-bordered table-striped table-condensed">
+                                  <thead>
+                                  <tr>
+                                    <tr>
+              													<th><i class="fa fa-calendar"></i> Last checked</th>
+                                        <th><i class="fa fa-bullhorn"></i> Stand name</th>
+                                        <th class="hidden-xs"><i class="fa fa-question-circle"></i> Description</th>
 
-<div class="row visible-xs">
-    <div class="col-xs-12 ">
-			<a href="#" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add an update</a>
-		</div>
-</div>
-
-<div class="row">
-    <div class="col-lg-12">
-        <section class="panel">
-            <header class="panel-heading">
-                List of your stands
-            </header>
-            <div class="panel-body">
-                <section id="unseen">
-                  <table class="table table-bordered table-striped table-condensed">
-                    <thead>
-                    <tr>
-                      <tr>
-													<th><i class="fa fa-calendar"></i> Last checked</th>
-                          <th><i class="fa fa-bullhorn"></i> Stand name</th>
-                          <th class="hidden-xs"><i class="fa fa-question-circle"></i> Description</th>
-
-													<th class="hidden-xs"><i class="fa fa-calendar"></i> Date Deployed</th>
-													<th><i class="fa fa-bolt"></i> Actions</th>
-                      </tr>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {{#stands}}
-  										<tr>
-                          <td class=" text-center"><time title="{{lastUpdateDate}}" datetime="{{lastUpdateDate}}" class="label
-  													{{labelFor lastUpdateDate}}">
-                            <i class="fa {{iconFor lastUpdateDate}}"></i>
-                            {{daysSince lastUpdateDate }} days</time></td>
-                          <td><a href="#">{{name}}</a></td>
-                          <td class="hidden-xs">{{description}}</td>
-                          <td class="hidden-xs">{{dateDeployed}}</td>
-                          <td class="text-center">
-  													<a href="#" alt="view this stand" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i></a>
-  													<a href="#" alt="add an update" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>
-                            <a href="#" alt="edit stand" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
-  												</td>
-                      </tr>
-                    {{/stands}}
-                    </tbody>
-                </table>
-                </section>
-            </div>
-        </section>
-    </div>
-</div>
-</script>
+              													<th class="hidden-xs"><i class="fa fa-calendar"></i> Date Deployed</th>
+              													<th><i class="fa fa-bolt"></i> Actions</th>
+                                    </tr>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  {{#stands}}
+                										<tr>
+                                        <td class=" text-center"><time title="{{lastUpdateDate}}" datetime="{{lastUpdateDate}}" class="label
+                													{{labelFor lastUpdateDate}}">
+                                          <i class="fa {{iconFor lastUpdateDate}}"></i>
+                                          {{daysSince lastUpdateDate }} days</time></td>
+                                        <td><a href="#">{{name}}</a></td>
+                                        <td class="hidden-xs">{{description}}</td>
+                                        <td class="hidden-xs">{{dateDeployed}}</td>
+                                        <td class="text-center">
+                													<a href="#" alt="view this stand" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i></a>
+                													<a href="#" alt="add an update" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>
+                                          <a href="#" alt="edit stand" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
+                												</td>
+                                    </tr>
+                                  {{/stands}}
+                                  </tbody>
+                              </table>
+                              </section>
+                          </div>
+                      </section>
+                  </div>
+              </div>
+            </script>
           </section>
       </section>
       <!--main content end-->

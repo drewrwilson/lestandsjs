@@ -55,8 +55,7 @@ var Stand = Backbone.Model.extend({
     var today = new Date(),
         lastUpdated = new Date ( this.get('lastUpdateDate') );
     return Math.floor( (today - lastUpdated) / (1000 * 60 * 60 * 24) );
-  }
-,
+  },
   initialize: function () {
     this.set('')
   }
@@ -83,7 +82,7 @@ var StandsView = Backbone.View.extend({
         },
     render: function(){
           // Compile the template using underscore
-
+          console.log('hello dude ');
           // todo this should be recalculated when the model changes, not when it is re-rendered.
           var view = {
             totalDistributed: 0,
@@ -122,7 +121,23 @@ var StandsView = Backbone.View.extend({
       }
 });
 
-var standsView = new StandsView({
-  el: $("#big-numbers-container"),
-  collection: stands,
+
+var Workspace = Backbone.Router.extend({
+  routes: {
+    "stands":   "index",  // #stands
+    "stands/:id":   "show",  // #stands/1
+  },
+  index: function() {
+    // TodoApp.trigger('fetchTodos', 'completed');
+    console.log("index view");
+    var standsView = new StandsView({
+      el: $("#big-numbers-container"),
+      collection: stands,
+    });
+  },
+  show: function(id) {
+    console.log('hello whirled');
+  },
 });
+    var appRouter = new Workspace;
+    Backbone.history.start({pushState: true});
