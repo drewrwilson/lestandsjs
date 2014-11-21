@@ -5,6 +5,7 @@ var app = app || {};
 
   var Workspace = Backbone.Router.extend({
     routes: {
+      "":   "index",  // #stands
       "stands":   "index",  // #stands
       "stands/:id":   "show",  // #stands/1
     },
@@ -22,6 +23,6 @@ var app = app || {};
   });
 
   app.router = new Workspace;
-  Backbone.history.start();
+  Backbone.history.start({pushState:true});
 
 })();

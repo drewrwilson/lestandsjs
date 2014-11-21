@@ -45,7 +45,6 @@ var app = app || {};
 
             html = this.template(view);
             this.$el.html(html)
-            // console.log(html)
         }
   });
 })(jQuery);

@@ -87,7 +87,6 @@
     </div>
 </aside>
 <!--sidebar end-->
-
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
@@ -101,8 +100,8 @@
 
             <div id="big-numbers-container">
             </div>
+            <script id="big-numbers-template" type="text/template">
 
-            <script id="big-numbers-template" type="text/template" >
 
               <!--state overview start-->
               <div class="row state-overview hidden-xs">
@@ -154,8 +153,8 @@
 
               <div class="row visible-xs">
                   <div class="col-xs-12 ">
-              			<a href="#" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add an update</a>
-              		</div>
+                    <a href="#" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add an update</a>
+                  </div>
               </div>
 
               <div class="row">
@@ -170,30 +169,30 @@
                                   <thead>
                                   <tr>
                                     <tr>
-              													<th><i class="fa fa-calendar"></i> Last checked</th>
+                                        <th><i class="fa fa-calendar"></i> Last checked</th>
                                         <th><i class="fa fa-bullhorn"></i> Stand name</th>
                                         <th class="hidden-xs"><i class="fa fa-question-circle"></i> Description</th>
 
-              													<th class="hidden-xs"><i class="fa fa-calendar"></i> Date Deployed</th>
-              													<th><i class="fa fa-bolt"></i> Actions</th>
+                                        <th class="hidden-xs"><i class="fa fa-calendar"></i> Date Deployed</th>
+                                        <th><i class="fa fa-bolt"></i> Actions</th>
                                     </tr>
                                   </tr>
                                   </thead>
                                   <tbody>
                                   {{#stands}}
-                										<tr>
+                                    <tr>
                                         <td class=" text-center"><time title="{{lastUpdateDate}}" datetime="{{lastUpdateDate}}" class="label
-                													{{labelFor lastUpdateDate}}">
+                                          {{labelFor lastUpdateDate}}">
                                           <i class="fa {{iconFor lastUpdateDate}}"></i>
                                           {{daysSince lastUpdateDate }} days</time></td>
                                         <td><a href="#">{{name}}</a></td>
                                         <td class="hidden-xs">{{description}}</td>
                                         <td class="hidden-xs">{{dateDeployed}}</td>
                                         <td class="text-center">
-                													<a href="#" alt="view this stand" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i></a>
-                													<a href="#" alt="add an update" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>
+                                          <a href="#" alt="view this stand" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i></a>
+                                          <a href="#" alt="add an update" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>
                                           <a href="#" alt="edit stand" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
-                												</td>
+                                        </td>
                                     </tr>
                                   {{/stands}}
                                   </tbody>
@@ -203,6 +202,7 @@
                       </section>
                   </div>
               </div>
+
             </script>
           </section>
       </section>
