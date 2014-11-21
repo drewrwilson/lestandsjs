@@ -40,3 +40,9 @@ Handlebars.registerHelper("labelFor", function(date) {
       return 'label-danger';
   }
 });
+
+
+/*
+* Globals
+*/
+var app = app || {};
