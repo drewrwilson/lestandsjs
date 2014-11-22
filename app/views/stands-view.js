@@ -4,13 +4,12 @@ var app = app || {};
 (function ($) {
 
   app.StandsView = Backbone.View.extend({
-      template: Handlebars.compile( $("#big-numbers-template").html() ),
+      template: Handlebars.compile( $("#all-stands-template").html() ),
       initialize: function(){
               this.listenTo(this.collection, 'reset', this.render);
           },
       render: function(){
             // Compile the template using underscore
-            console.log('hello dude ');
             // todo this should be recalculated when the model changes, not when it is re-rendered.
             var view = {
               totalDistributed: 0,
@@ -47,4 +46,31 @@ var app = app || {};
             this.$el.html(html)
         }
   });
+
+
+
+
+
+
+app.StandView = Backbone.View.extend({
+    template: Handlebars.compile( $("#single-stand-template").html() ),
+    initialize: function(){
+            this.listenTo(this.model, 'reset', this.render);
+            console.log('getting routed here');
+            this.render();
+        },
+    render: function(){
+          html = this.template(this.model.attributes);
+          console.log(this.model.attributes);
+          this.$el.html(html)
+      }
+});
+
+
+
+
+
+
+
+
 })(jQuery);

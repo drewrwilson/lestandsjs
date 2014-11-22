@@ -90,18 +90,141 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-						<div class="row">
-						    <div class="col-lg-12">
-									<h1 >
-									    All your stands
-									</h1>
-								</div>
-							</div>
 
             <div id="big-numbers-container">
             </div>
-            <script id="big-numbers-template" type="text/template">
 
+            <!-- THIS IS THE TEMPLATE FOR A SINGLE STAND VIEW  -->
+            <script id="single-stand-template" type="text/template">
+              <div class="row">
+                  <div class="col-lg-12">
+                    <h1>Stand: {{name}}</h1>
+                  </div>
+                </div>
+
+
+
+              <!--state overview start-->
+              <div class="row state-overview hidden-xs">
+                  <div class="col-lg-4 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol terques">
+                              <i class="fa fa-bar-chart"></i>
+                          </div>
+                          <div class="value">
+                              <h1> {{ totalDistributed }}</h1>
+                              <p>Total Distributed</p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol red">
+                              <i class="fa fa-check"></i>
+                          </div>
+                          <div class="value">
+                              <h1>{{ totalUpdates }}</h1>
+                              <p>Total Number of Updates</p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol blue">
+                              <i class="fa fa-calendar"></i>
+                          </div>
+                          <div class="value">
+                              <h1>{{ daysSinceChecked }}</h1>
+                              <p>Days since last checked</p>
+                          </div>
+                      </section>
+                  </div>
+              </div>
+
+              <div class="row visible-xs">
+                  <div class="col-xs-12 ">
+                    <a href="#" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add an update</a>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-lg-12">
+                      <section class="panel">
+                          <header class="panel-heading">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div class="pull-right">
+                                  <a href="#" class="btn btn-primary btn-xs"><i class="icon-plus"></i> Add update</a>
+                                  <a href="#" class="btn btn-success btn-xs"><i class="icon-pencil"></i> Edit stand</a>
+                                  <a class="btn btn-danger btn-xs" data-toggle="modal" alt="delete this stand" href="#"><i class="icon-trash "></i> Delete stand</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xs-2 hidden-xs">
+                                <img src="assets/img/example-stand.jpg" width="150px" class="img-rounded thumbnail">
+                              </div>
+                              <div class="col-xs-10">
+                                <h2>{{name}}</h2>
+                                <span class="">date deployed: {{dateDeployed}}</span>
+                                <br />
+                                <span class="muted hidden-sm hidden-xs" style="font-style:italic; font-size:90%;">{{description}}</span>
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                              <div class="col-xs-12">
+                                Recent updates
+                              </div>
+                            </div>
+                          </header>
+                          <div class="panel-body">
+                              <section id="unseen">
+                                <table class="table table-bordered table-striped table-condensed">
+                                  <thead>
+                                  <tr>
+                                    <tr>
+                                        <th><i class="fa fa-calendar"></i> Date</th>
+                                        <th><i class="fa fa-bullhorn"></i> Amount when checked</th>
+                                        <th class="hidden-xs"><i class="fa fa-question-circle"></i> Amount added</th>
+                                        <th class="hidden-xs"><i class="fa fa-calendar"></i> Comments</th>
+                                        <th><i class="fa fa-bolt"></i> Actions</th>
+                                    </tr>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  {{#updates}}
+                                    <tr>
+                                        <td>{{date}}</td>
+                                        <td><a href="#">{{amountWhenChecked}}</a></td>
+                                        <td class="hidden-xs">{{amountAdded}}</td>
+                                        <td class="hidden-xs">{{comments}}</td>
+                                        <td class="text-center">
+                                          <a href="#" alt="view this stand" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i></a>
+                                          <a href="#" alt="add an update" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>
+                                          <a href="#" alt="edit stand" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
+                                        </td>
+                                    </tr>
+                                  {{/updates}}
+                                  </tbody>
+                              </table>
+                              </section>
+                          </div>
+                      </section>
+                  </div>
+              </div>
+            </script> <!-- END TEMPLATE FOR SINGLE STAND -->
+
+
+
+
+            <!-- THIS IS THE TEMPLATE FOR THE STANDS OVERVIEW -->
+            <script id="all-stands-template" type="text/template">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h1>All your stands</h1>
+                </div>
+              </div>
 
               <!--state overview start-->
               <div class="row state-overview hidden-xs">
@@ -202,8 +325,7 @@
                       </section>
                   </div>
               </div>
-
-            </script>
+            </script><!-- END TEMPLATE FOR THE STANDS OVERVIEW -->
           </section>
       </section>
       <!--main content end-->

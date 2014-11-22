@@ -18,11 +18,22 @@ var app = app || {};
       });
     },
     show: function(id) {
-      console.log('hello whirled');
+      //right now id is hard-coded as 1 for testing. Change it to id when you're ready for real data.
+      var singleStand = new app.Stand ({"id": 1});
+
+      //this fetches the data from the url with the ID as param, and on success creates a new view
+      singleStand.fetch({
+        success: function (singleStand) {
+            app.singleStandView = new app.StandView({
+              el: $("#big-numbers-container"),
+              model: singleStand,
+            });
+        }
+      })
     },
   });
 
   app.router = new Workspace;
-  Backbone.history.start({pushState:true});
+  Backbone.history.start();
 
 })();
