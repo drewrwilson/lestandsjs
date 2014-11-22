@@ -56,12 +56,43 @@ app.StandView = Backbone.View.extend({
     template: Handlebars.compile( $("#single-stand-template").html() ),
     initialize: function(){
             this.listenTo(this.model, 'reset', this.render);
-            console.log('getting routed here');
             this.render();
         },
     render: function(){
-          html = this.template(this.model.attributes);
-          console.log(this.model.attributes);
+          var view = {
+            totalDistributed: 0,
+            totalUpdates: 0,
+            daysSinceChecked: null,
+            stand:this.model.attributes
+          }
+
+          // initial value
+          var mostRecentUpdate = null,
+              currentUpdateDate = null;;
+
+          window.updates = view.stand.updates;
+          // determine most recent update
+
+          view.stand.updates.forEach(function(update){
+            view.totalDistributed += update.amountAdded; //add up the number of leaflets added
+            view.totalUpdates++; //add one for each update in the list
+            currentUpdateDate = new Date(update.date);
+
+            //determine which date is the latest update date
+            if (mostRecentUpdate == null) {
+              mostRecentUpdate = new Date(update.date);
+            } else if ( currentUpdateDate > mostRecentUpdate) {
+              mostRecentUpdate = currentUpdateDate;
+            }
+
+          //view.stand.updates.push(update);
+        }); //end forEach
+
+          //determine how many days since last update
+          today = new Date();
+          view.daysSinceChecked = Math.floor((today - mostRecentUpdate) / (1000*60*60*24));
+
+          html = this.template(view);
           this.$el.html(html)
       }
 });

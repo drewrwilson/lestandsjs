@@ -91,7 +91,7 @@
       <section id="main-content">
           <section class="wrapper">
 
-            <div id="big-numbers-container">
+            <div id="main-container">
             </div>
 
             <!-- THIS IS THE TEMPLATE FOR A SINGLE STAND VIEW  -->
@@ -166,9 +166,9 @@
                               </div>
                               <div class="col-xs-10">
                                 <h2>{{name}}</h2>
-                                <span class="">date deployed: {{dateDeployed}}</span>
+                                <span class="">date deployed: {{stand.dateDeployed}}</span>
                                 <br />
-                                <span class="muted hidden-sm hidden-xs" style="font-style:italic; font-size:90%;">{{description}}</span>
+                                <span class="muted hidden-sm hidden-xs" style="font-style:italic; font-size:90%;">{{stand.description}}</span>
                               </div>
                             </div>
                             <hr>
@@ -193,7 +193,7 @@
                                   </tr>
                                   </thead>
                                   <tbody>
-                                  {{#updates}}
+                                  {{#stand.updates}}
                                     <tr>
                                         <td>{{date}}</td>
                                         <td><a href="#">{{amountWhenChecked}}</a></td>
@@ -205,7 +205,7 @@
                                           <a href="#" alt="edit stand" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
                                         </td>
                                     </tr>
-                                  {{/updates}}
+                                  {{/stand.updates}}
                                   </tbody>
                               </table>
                               </section>
