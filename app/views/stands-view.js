@@ -3,6 +3,7 @@ var app = app || {};
 
 (function ($) {
 
+//view for all stands
   app.StandsView = Backbone.View.extend({
       template: Handlebars.compile( $("#all-stands-template").html() ),
       initialize: function(){
@@ -51,7 +52,7 @@ var app = app || {};
 
 
 
-
+// view for single stand
 app.StandView = Backbone.View.extend({
     template: Handlebars.compile( $("#single-stand-template").html() ),
     initialize: function(){
@@ -98,8 +99,19 @@ app.StandView = Backbone.View.extend({
 });
 
 
+//view for adding an update
 
 
+app.AddUpdateView = Backbone.View.extend({
+    template: Handlebars.compile( $("#add-update-template").html() ),
+    initialize: function(){
+            this.render();
+        },
+    render: function(){
+          html = this.template();
+          this.$el.html(html)
+      }
+});
 
 
 

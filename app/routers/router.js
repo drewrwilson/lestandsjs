@@ -8,6 +8,7 @@ var app = app || {};
       "":   "index",  // #stands
       "stands":   "index",  // #stands
       "stands/:id":   "show",  // #stands/1
+      "update/add":   "addUpdate",  // #stands/1
     },
     index: function() {
       // TodoApp.trigger('fetchTodos', 'completed');
@@ -30,6 +31,12 @@ var app = app || {};
             });
         }
       })
+    },
+    addUpdate: function() {
+      //this fetches the data from the url with the ID as param, and on success creates a new view
+      app.addUpdateView = new app.AddUpdateView({
+        el: $("#main-container")
+      });
     },
   });
 
