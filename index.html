@@ -95,12 +95,13 @@
             </div>
 
             <!-- THIS IS THE TEMPLATE FOR A SINGLE STAND VIEW  -->
-            <script id="test-template" type="text/template">
+            <script id="single-stand-template" type="text/template">
               <div class="row">
                   <div class="col-lg-12">
                     <h1>Stand: {{name}}</h1>
                   </div>
                 </div>
+
 
 
               <!--state overview start-->
@@ -150,7 +151,32 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              List of your updates
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div class="pull-right">
+                                  <a href="#" class="btn btn-primary btn-xs"><i class="icon-plus"></i> Add update</a>
+                                  <a href="#" class="btn btn-success btn-xs"><i class="icon-pencil"></i> Edit stand</a>
+                                  <a class="btn btn-danger btn-xs" data-toggle="modal" alt="delete this stand" href="#"><i class="icon-trash "></i> Delete stand</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xs-2 hidden-xs">
+                                <img src="assets/img/example-stand.jpg" width="150px" class="img-rounded thumbnail">
+                              </div>
+                              <div class="col-xs-10">
+                                <h2>{{name}}</h2>
+                                <span class="">date deployed: {{dateDeployed}}</span>
+                                <br />
+                                <span class="muted hidden-sm hidden-xs" style="font-style:italic; font-size:90%;">{{description}}</span>
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                              <div class="col-xs-12">
+                                Recent updates
+                              </div>
+                            </div>
                           </header>
                           <div class="panel-body">
                               <section id="unseen">
@@ -193,7 +219,7 @@
 
 
             <!-- THIS IS THE TEMPLATE FOR THE STANDS OVERVIEW -->
-            <script id="big-numbers-template" type="text/template">
+            <script id="all-stands-template" type="text/template">
               <div class="row">
                 <div class="col-lg-12">
                   <h1>All your stands</h1>

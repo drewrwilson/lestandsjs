@@ -18,7 +18,6 @@ var app = app || {};
       });
     },
     show: function(id) {
-      console.log('show single stand view');
       //right now id is hard-coded as 1 for testing. Change it to id when your ready for real data.
       var singleStand = new app.Stand ({"id": 1});
 

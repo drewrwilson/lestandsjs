@@ -4,7 +4,7 @@ var app = app || {};
 (function ($) {
 
   app.StandsView = Backbone.View.extend({
-      template: Handlebars.compile( $("#big-numbers-template").html() ),
+      template: Handlebars.compile( $("#all-stands-template").html() ),
       initialize: function(){
               this.listenTo(this.collection, 'reset', this.render);
           },
@@ -53,7 +53,7 @@ var app = app || {};
 
 
 app.StandView = Backbone.View.extend({
-    template: Handlebars.compile( $("#test-template").html() ),
+    template: Handlebars.compile( $("#single-stand-template").html() ),
     initialize: function(){
             this.listenTo(this.model, 'reset', this.render);
             console.log('getting routed here');
