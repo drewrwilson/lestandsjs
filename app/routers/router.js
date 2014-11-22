@@ -18,10 +18,10 @@ var app = app || {};
       });
     },
     show: function(id) {
-      //right now id is hard-coded as 1 for testing. Change it to id when your ready for real data.
+      //right now id is hard-coded as 1 for testing. Change it to id when you're ready for real data.
       var singleStand = new app.Stand ({"id": 1});
 
-      //this is fetches the data from the url with the ID as param, and on success creates a new view
+      //this fetches the data from the url with the ID as param, and on success creates a new view
       singleStand.fetch({
         success: function (singleStand) {
             app.singleStandView = new app.StandView({
