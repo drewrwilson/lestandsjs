@@ -105,6 +105,7 @@ app.StandView = Backbone.View.extend({
 app.AddUpdateView = Backbone.View.extend({
     template: Handlebars.compile( $("#add-update-template").html() ),
     initialize: function(){
+            //this.listenTo(this.model, 'reset', this.render);
             this.render();
         },
     render: function(){

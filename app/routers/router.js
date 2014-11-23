@@ -33,11 +33,11 @@ var app = app || {};
       })
     },
     addUpdate: function() {
-      //this fetches the data from the url with the ID as param, and on success creates a new view
+      // this fetches the data from the url with the ID as param, and on success creates a new view
       app.addUpdateView = new app.AddUpdateView({
         el: $("#main-container")
       });
-    },
+    }
   });
 
   app.router = new Workspace;
