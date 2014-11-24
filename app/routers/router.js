@@ -7,8 +7,9 @@ var app = app || {};
     routes: {
       "":   "index",  // #stands
       "stands":   "index",  // #stands
+      "stands/add":   "addStand",  // #stands/add
       "stands/:id":   "show",  // #stands/1
-      "update/add":   "addUpdate",  // #stands/1
+      "updates/add":   "addUpdate",  // #updates/add
     },
     index: function() {
       // TodoApp.trigger('fetchTodos', 'completed');
@@ -35,6 +36,11 @@ var app = app || {};
     addUpdate: function() {
       // this fetches the data from the url with the ID as param, and on success creates a new view
       app.addUpdateView = new app.AddUpdateView({
+        el: $("#main-container")
+      });
+    },
+    addStand: function() {
+      app.addStandView = new app.AddStandView({
         el: $("#main-container")
       });
     }

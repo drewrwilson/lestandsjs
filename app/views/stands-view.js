@@ -67,7 +67,7 @@ app.StandView = Backbone.View.extend({
             stand:this.model.attributes
           }
           view.totalUpdates = _.size(view.stand.updates);
-          
+
           // initial value
           var mostRecentUpdate = null,
               currentUpdateDate = null;;
@@ -104,6 +104,18 @@ app.StandView = Backbone.View.extend({
 
 app.AddUpdateView = Backbone.View.extend({
     template: Handlebars.compile( $("#add-update-template").html() ),
+    initialize: function(){
+            //this.listenTo(this.model, 'reset', this.render);
+            this.render();
+        },
+    render: function(){
+          html = this.template();
+          this.$el.html(html)
+      }
+});
+
+app.AddStandView = Backbone.View.extend({
+    template: Handlebars.compile( $("#add-stand-template").html() ),
     initialize: function(){
             //this.listenTo(this.model, 'reset', this.render);
             this.render();
