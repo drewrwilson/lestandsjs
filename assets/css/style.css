@@ -703,23 +703,24 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     margin-top: 20px;
 }
 
-.sidebar-toggle-box .icon-reorder {
+.sidebar-toggle-box .fa-bars {
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
 }
 
-
-.sidebar-closed > #sidebar > ul {
-    display: none;
+#sidebar, #main-content {
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
 }
-
 .sidebar-closed #main-content {
     margin-left: 0px;
 }
-
 .sidebar-closed #sidebar {
-    margin-left: -180px;
+    margin-left: -210px;
 }
 
 /*state overview*/
