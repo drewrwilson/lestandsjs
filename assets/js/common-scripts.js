@@ -30,7 +30,7 @@ var Script = function () {
         $(window).on('resize', responsiveView);
     });
 
-    $('.icon-reorder').click(function () {
+    $('.fa-bars').click(function () {
         if ($('#sidebar > ul').is(":visible") === true) {
             $('#main-content').css({
                 'margin-left': '0px'
