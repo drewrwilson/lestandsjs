@@ -37,6 +37,10 @@
         z-index: 1001;
     }
 
+    .sidebar-close #sidebar ul {
+        display: none;
+    }
+
 
     /* body container */
     #main-content {
