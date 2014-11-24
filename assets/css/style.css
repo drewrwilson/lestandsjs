@@ -710,16 +710,11 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 
-.sidebar-closed > #sidebar > ul {
-    display: none;
-}
-
 .sidebar-closed #main-content {
     margin-left: 0px;
 }
-
 .sidebar-closed #sidebar {
-    margin-left: -180px;
+    margin-left: -210px;
 }
 
 /*state overview*/
