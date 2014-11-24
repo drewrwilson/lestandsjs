@@ -7,7 +7,7 @@ var app = app || {};
     routes: {
       "":   "index",  // #stands
       "stands":   "index",  // #stands
-      "stands/add":   "addStand",  // #stands/add
+      "stands/create":   "createStand",  // #stands/add
       "stands/:id":   "show",  // #stands/1
       "updates/add":   "addUpdate",  // #updates/add
     },
@@ -39,7 +39,7 @@ var app = app || {};
         el: $("#main-container")
       });
     },
-    addStand: function() {
+    createStand: function() {
       app.addStandView = new app.AddStandView({
         el: $("#main-container")
       });

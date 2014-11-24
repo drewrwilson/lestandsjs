@@ -111,6 +111,7 @@ app.AddUpdateView = Backbone.View.extend({
     render: function(){
           html = this.template();
           this.$el.html(html)
+          $('.default-date-picker').datepicker();
       }
 });
 
@@ -123,6 +124,7 @@ app.AddStandView = Backbone.View.extend({
     render: function(){
           html = this.template();
           this.$el.html(html)
+          $('.default-date-picker').datepicker();
       }
 });
 
