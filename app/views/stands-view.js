@@ -66,7 +66,8 @@ app.StandView = Backbone.View.extend({
             daysSinceChecked: null,
             stand:this.model.attributes
           }
-
+          view.totalUpdates = _.size(view.stand.updates);
+          
           // initial value
           var mostRecentUpdate = null,
               currentUpdateDate = null;;
@@ -76,7 +77,6 @@ app.StandView = Backbone.View.extend({
 
           view.stand.updates.forEach(function(update){
             view.totalDistributed += update.amountAdded; //add up the number of leaflets added
-            view.totalUpdates++; //add one for each update in the list
             currentUpdateDate = new Date(update.date);
 
             //determine which date is the latest update date
