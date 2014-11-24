@@ -37,7 +37,7 @@
         z-index: 1001;
     }
 
-    .sidebar-close #sidebar ul {
+    .sidebar-closed #sidebar ul {
         display: none;
     }
 

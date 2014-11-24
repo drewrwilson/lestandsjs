@@ -17,11 +17,11 @@ var Script = function () {
         function responsiveView() {
             var wSize = $(window).width();
             if (wSize <= 768) {
-                $('#container').addClass('sidebar-close');
+                $('#container').addClass('sidebar-closed');
             }
 
             if (wSize > 768) {
-                $('#container').removeClass('sidebar-close');
+                $('#container').removeClass('sidebar-closed');
             }
         }
         $(window).on('load', responsiveView);
