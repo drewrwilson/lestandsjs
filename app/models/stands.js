@@ -11,7 +11,6 @@ var app = app || {};
       return Math.floor( (today - lastUpdated) / (1000 * 60 * 60 * 24) );
     },
     initialize: function () {
-      this.set('')
     }
   });
 

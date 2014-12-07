@@ -7,7 +7,8 @@ var app = app || {};
     routes: {
       "":   "index",  // #stands
       "stands":   "index",  // #stands
-      "stands/create":   "createStand",  // #stands/add
+      "stands/create":   "createStand",  // #stands/create
+      "stands/:id/edit":   "editStand",  // #stands/1/edit
       "stands/:id":   "show",  // #stands/1
       "updates/add":   "addUpdate",  // #updates/add
     },
@@ -43,7 +44,20 @@ var app = app || {};
       app.addStandView = new app.AddStandView({
         el: $("#main-container")
       });
-    }
+    },
+    editStand: function(id) {
+      var singleStand = new app.Stand ({"id": id});
+
+      //this fetches the data from the url with the ID as param, and on success creates a new view
+      singleStand.fetch({
+        success: function (singleStand) {
+          app.addStandView = new app.AddStandView({
+            el: $("#main-container"),
+            model: singleStand,
+          });
+        }
+      })
+    },
   });
 
   app.router = new Workspace;

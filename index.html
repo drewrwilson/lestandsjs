@@ -423,7 +423,7 @@
             <script id="add-stand-template" type="text/template">
               <div class="row">
                 <div class="col-lg-12">
-                  <h1>Create a new stand</h1>
+                  <h1>{{pageTitle}}</h1>
                 </div>
               </div>
 
@@ -431,7 +431,7 @@
                   <div class="col-md-10 col-md-offset-1">
                       <section class="panel">
                           <header class="panel-heading">
-                              Create a new stand
+                              {{pageTitle}}
                           </header>
                           <div class="panel-body">
                               <form action="#" method="post" class="form-horizontal tasi-form">
@@ -439,7 +439,7 @@
                                 <div class="form-group">
                                   <label class="control-label col-md-3" for="before">Name of stand</label>
                                    <div class="col-md-4 col-xs-11">
-                                       <input name="name" id="name" class="form-control form-control-inline input-medium" placeholder="Outside Starbucks" type="text" required="" data-toggle="popover" title="" data-content="What is the name of this stand?" data-trigger="hover">
+                                       <input name="name" id="name" class="form-control form-control-inline input-medium" placeholder="Outside Starbucks" type="text" required="" data-toggle="popover" title="" data-content="What is the name of this stand?" data-trigger="hover" value="{{name}}">
                                       <span class="help-block">Come up with a short, descriptive name for this stand. Eg 'Outside DCU Center'.</span>
                                    </div>
                                 </div>
@@ -448,7 +448,7 @@
                                   <div class="form-group">
                                       <label class="control-label col-md-3" for="date">Date deployed</label>
                                       <div class="col-md-4 col-xs-11">
-                                        <input name="dateDeployed" id="dateDeployed" class="form-control input-medium default-date-picker" value="" size="16" type="text" required="">
+                                        <input name="dateDeployed" id="dateDeployed" class="form-control input-medium default-date-picker" size="16" type="text" required value="{{dateDeployed}}">
                                         <span class="help-block">Select date</span>
                                       </div>
                                   </div>
@@ -456,7 +456,7 @@
                                   <div class="form-group">
                                     <label class="control-label col-md-3" for="description">Description (optional)</label>
                                     <div class="col-md-9 col-xs-11">
-                                      <textarea rows="3" name="description" id="description" class="form-control form-control-inline input-medium" placeholder="e.g. Brand new stand with fresh stickers."></textarea>
+                                      <textarea rows="3" name="description" id="description" class="form-control form-control-inline input-medium" placeholder="e.g. Brand new stand with fresh stickers.">{{description}}</textarea>
                                     </div>
                                   </div>
 
@@ -464,7 +464,7 @@
                                   <!-- Button -->
                                   <div class="form-group">
                                     <label class="control-label col-md-4 col-md-offset-5" for="singlebutton"></label>
-                                      <button id="singlebutton" name="singlebutton" class="btn btn-lg btn-primary" type="submit"><i class="icon-cloud-upload"></i> Create New Stand</button>
+                                      <button id="singlebutton" name="singlebutton" class="btn btn-lg btn-primary" type="submit"><i class="icon-cloud-upload"></i> Save</button>
                                   </div>
                               </form>
                           </div>
