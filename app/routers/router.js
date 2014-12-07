@@ -47,6 +47,5 @@ var app = app || {};
   });
 
   app.router = new Workspace;
-  Backbone.history.start();
 
 })();

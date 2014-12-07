@@ -46,3 +46,8 @@ Handlebars.registerHelper("labelFor", function(date) {
 * Globals
 */
 var app = app || {};
+
+$(document).ready(function(){
+  var dispatcher = _.clone(Backbone.Events)
+  Backbone.history.start();  
+})

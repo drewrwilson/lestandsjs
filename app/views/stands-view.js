@@ -6,6 +6,11 @@ var app = app || {};
 //view for all stands
   app.StandsView = Backbone.View.extend({
       template: Handlebars.compile( $("#all-stands-template").html() ),
+      events: {
+        "click .dashboard-link": "homeDude",
+        "click .create-stand-link": "createStand",
+        "click .add-update-link": "addUpdateLink",
+      },
       initialize: function(){
               this.listenTo(this.collection, 'reset', this.render);
           },
@@ -21,7 +26,6 @@ var app = app || {};
             }
 
             var mostRecentUpdate = null;
-
 
             this.collection.each(function(stand){
               stand = stand.attributes;
