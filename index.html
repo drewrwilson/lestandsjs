@@ -36,14 +36,14 @@
                 <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-bars tooltips"></div>
             </div>
             <!--logo start-->
-            <a href="#" class="logo">le<span>Stands</span></a>
+            <a href="/" class="logo">le<span>Stands</span></a>
             <!--logo end-->
 
             <div class="top-nav ">
                 <!--search & user info start-->
                 <ul class="nav pull-right top-menu">
                   <li>
-                     <button onclick="location.href='#'" class="btn btn-primary btn-lg hidden-s hidden-xs"><i class="fa fa-plus"></i> Add an update</button>
+                     <button onclick="location.href='#/updates/add'" class="btn btn-primary btn-lg hidden-s hidden-xs"><i class="fa fa-plus"></i> Add an update</button>
                   </li>
 									<!-- user login dropdown start-->
                     <!-- <li class="dropdown">
@@ -71,20 +71,20 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
             <li>
-                <a class="" href="#" class="dashboard-link">
+                <a class="" href="/" class="dashboard-link">
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
             <li>
-                <a href="#" class="add-update-link">
+                <a href="#/updates/add" class="add-update-link">
                     <i class="fa fa-plus"></i>
                     <span id="add-update-link">Add an update</span>
                 </a>
             </li>
             <li>
-              <a href="#" class="create-stand-link">
+              <a href="#/stands/create" class="create-stand-link">
                 <i class="fa fa-plus"></i>
                 <span>Create new stand</span>
               </a>
@@ -151,7 +151,7 @@
 
               <div class="row visible-xs">
                   <div class="col-xs-12 ">
-                    <a href="#" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add an update</a>
+                    <a href="#/updates/add" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add an update</a>
                   </div>
               </div>
 
@@ -162,8 +162,8 @@
                             <div class="row">
                               <div class="col-xs-12">
                                 <div class="pull-right">
-                                  <a href="#" class="btn btn-primary btn-xs"><i class="icon-plus"></i> Add update</a>
-                                  <a href="#" class="btn btn-success btn-xs"><i class="icon-pencil"></i> Edit stand</a>
+                                  <a href="#/updates/add" class="btn btn-primary btn-xs"><i class="icon-plus"></i> Add update</a>
+                                  <a href="#/stands/{{id}}/edit" class="btn btn-success btn-xs"><i class="icon-pencil"></i> Edit stand</a>
                                   <a class="btn btn-danger btn-xs" data-toggle="modal" alt="delete this stand" href="#"><i class="icon-trash "></i> Delete stand</a>
                                 </div>
                               </div>
@@ -208,8 +208,8 @@
                                         <td class="hidden-xs">{{amountAdded}}</td>
                                         <td class="hidden-xs">{{comments}}</td>
                                         <td class="text-center">
-                                          <a href="#" alt="view this stand" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i></a>
-                                          <a href="#" alt="add an update" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>
+                                          <a href="#/stands/{{id}}" alt="view this stand" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i></a>
+                                          <a href="" alt="add an update" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>
                                           <a href="#" alt="edit stand" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
                                         </td>
                                     </tr>
@@ -318,7 +318,7 @@
                                           {{labelFor lastUpdateDate}}">
                                           <i class="fa {{iconFor lastUpdateDate}}"></i>
                                           {{daysSince lastUpdateDate }} days</time></td>
-                                        <td><a href="#">{{name}}</a></td>
+                                        <td><a href="#/stands/{{id}}">{{name}}</a></td>
                                         <td class="hidden-xs">{{description}}</td>
                                         <td class="hidden-xs">{{dateDeployed}}</td>
                                         <td class="text-center">

@@ -31,6 +31,7 @@ var app = app || {};
               el: $("#main-container"),
               model: singleStand,
             });
+
         }
       })
     },

@@ -7,9 +7,9 @@ var app = app || {};
   app.StandsView = Backbone.View.extend({
       template: Handlebars.compile( $("#all-stands-template").html() ),
       events: {
-        "click .dashboard-link": "homeDude",
-        "click .create-stand-link": "createStand",
-        "click .add-update-link": "addUpdateLink",
+        // "click .dashboard-link": "homeDude",
+        // "click .create-stand-link": "createStand",
+        // "click .add-update-link": "addUpdateLink",
       },
       initialize: function(){
               this.listenTo(this.collection, 'reset', this.render);
@@ -17,6 +17,7 @@ var app = app || {};
       render: function(){
             // Compile the template using underscore
             // todo this should be recalculated when the model changes, not when it is re-rendered.
+
             var view = {
               totalDistributed: 0,
               totalUpdates: 0,
@@ -65,6 +66,7 @@ app.StandView = Backbone.View.extend({
         },
     render: function(){
           var view = {
+            id: this.model.attributes.id,
             totalDistributed: 0,
             totalUpdates: 0,
             daysSinceChecked: null,
