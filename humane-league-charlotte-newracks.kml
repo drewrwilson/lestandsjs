@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>Humane League Charlotte VSK newsracks</name>
+		<description><![CDATA[A map of every Humane League Charlotte newsrack containing vegetarian starter guides]]></description>
+		<Folder>
+			<name>Modular racks</name>
+			<Placemark>
+				<styleUrl>#icon-503-3F5BA9</styleUrl>
+				<name>S Tryon &amp; MLK #1</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.84643602371216,35.22478017491058,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-3F5BA9</styleUrl>
+				<name>S Tryon &amp; MLK #2</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.84629654884338,35.22478893924818,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-3F5BA9</styleUrl>
+				<name>Outside Capital Grille</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.84186553955078,35.228114937026774,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-3F5BA9</styleUrl>
+				<name>Outside Qdoba</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.8421927690506,35.22787830927846,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-3F5BA9</styleUrl>
+				<name>Outside Bank of America</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.84293305873871,35.227242916539964,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Green racks</name>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Uptown bus terminal</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.8412379026413,35.22391250080143,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Outside BB&amp;T</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.8432012796402,35.225538286613535,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Outside parking garage #1</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.84520220756531,35.22719690514846,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Outside American Roadside Burgers</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.84841549396515,35.225218390631575,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Uptown Starbucks #1</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.84839403629303,35.22499928306689,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Uptown Starbucks #2</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.8486944437027,35.22507377970525,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Outside parking garage #2</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.84418296813966,35.22491163987534,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Near Convention Center</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.84527730941772,35.22385114975566,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Outside of Merts</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.84019184112549,35.227374377514785,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Near library</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.83978414535522,35.2279440392778,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>CPCC #2</name>
+				<ExtendedData>
+				</ExtendedData>
+				<description><![CDATA[At bus stop]]></description>
+				<Point>
+					<coordinates>-80.83113133907318,35.21742217953794,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>CPCC #1</name>
+				<ExtendedData>
+				</ExtendedData>
+				<description><![CDATA[At bus stop]]></description>
+				<Point>
+					<coordinates>-80.83139419555664,35.217505448256034,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>CPCC #3</name>
+				<ExtendedData>
+				</ExtendedData>
+				<description><![CDATA[Outside of parking garage]]></description>
+				<Point>
+					<coordinates>-80.82972049713136,35.216146842709286,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Common Market</name>
+				<ExtendedData>
+				</ExtendedData>
+				<description><![CDATA[On left side of patio near parking lot]]></description>
+				<Point>
+					<coordinates>-80.81195086240768,35.21877857248747,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Plaza Bus Stop</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.81246316432953,35.22031023938521,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>NoDa utility pole</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.80504417419434,35.247371492628815,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Outside of Sanctuary</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.80422341823578,35.247437206832856,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Lynx East/West Stop</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.85864007472992,35.21237768892281,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Lynx Woodlawn Station</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.87942719459534,35.1760533659996,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-62AF44</styleUrl>
+				<name>Lynx I-485 Station</name>
+				<ExtendedData>
+				</ExtendedData>
+				<description><![CDATA[Outside of parking structure]]></description>
+				<Point>
+					<coordinates>-80.88330030441284,35.107226769734005,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Wire Racks</name>
+			<Placemark>
+				<styleUrl>#icon-503-000000</styleUrl>
+				<name>SADU Body Piercing &amp; Modifications</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.812858,35.220528,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-000000</styleUrl>
+				<name>Okra</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.81278700000001,35.218525,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-000000</styleUrl>
+				<name>Luna's Living Kitchen</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.86154222488403,35.208564529704404,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-000000</styleUrl>
+				<name>Eco-Licious</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.81265360116959,35.218566021293256,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-000000</styleUrl>
+				<name>Bean Vegan Cuisine</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.7925397157669,35.204439980020425,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#icon-503-000000</styleUrl>
+				<name>The Greener Apple</name>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-80.81028655171394,35.22066630944841,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Style id='icon-503-000000'>
+			<IconStyle>
+				<color>ff000000</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+		<Style id='icon-503-3F5BA9'>
+			<IconStyle>
+				<color>ffA95B3F</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+		<Style id='icon-503-62AF44'>
+			<IconStyle>
+				<color>ff44AF62</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+	</Document>
+</kml>
