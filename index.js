@@ -1,10 +1,14 @@
 var restify = require('restify');  //package for API routes
+var pg = require('pg');  //package for SQL db
 /*
     ToDo:
         passportJS, //user auth
-        pg; //database
 */
 
+// get db string from environmental var in this format: "postgres://username:password@localhost/database"
+var connectionString = process.env.DATABASE_URL;
+
+//run the server
 var port = process.env.PORT || 80; //it's required to have this environmental variable set in on deploy on heroku
 
 var server = restify.createServer({
