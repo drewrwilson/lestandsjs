@@ -11,6 +11,9 @@ var server = restify.createServer({
   name: 'lestands',
   version: '1.0.0'
 });
+
+server.pre(restify.CORS());
+server.use(restify.fullResponse());
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
