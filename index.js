@@ -159,5 +159,5 @@ server.get('/stands/:id/updates/:updateID', function (req, res, next) {
 });
 
 server.listen(80, function () {
-  console.log('%s listening at %s', server.name, server.url);
+  console.log('%s listening at url %s', server.name, server.url);
 });
