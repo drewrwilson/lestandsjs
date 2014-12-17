@@ -4,7 +4,7 @@ var app = app || {};
 (function () {
 
   var Stands = Backbone.Collection.extend({
-      url: 'http://private-159b-lestands.apiary-mock.com/stands',
+      url: 'https://lestands-api.herokuapp.com/stands',
       model: app.Stand,
       initialize: function() {
           this.fetch({reset: true});

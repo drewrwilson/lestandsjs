@@ -4,7 +4,7 @@ var app = app || {};
 (function () {
   app.Stand = Backbone.Model.extend({
     // this function returns the number of days since the last update on this model
-    urlRoot: 'http://private-159b-lestands.apiary-mock.com/stands',
+    urlRoot: 'https://lestands-api.herokuapp.com/stands',
     daysSinceUpdated: function () {
       var today = new Date(),
           lastUpdated = new Date ( this.get('lastUpdateDate') );
