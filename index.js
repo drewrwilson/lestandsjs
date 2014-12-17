@@ -158,6 +158,6 @@ server.get('/stands/:id/updates/:updateID', function (req, res, next) {
   return next();
 });
 
-server.listen(8080, function () {
-  console.log('%s listening at %s', server.name, server.url);
+server.listen(80, function () {
+  console.log('%s listening at url %s', server.name, server.url);
 });

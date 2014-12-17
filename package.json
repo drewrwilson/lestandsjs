@@ -5,5 +5,8 @@
   "private": true,
   "dependencies": {
     "restify" : "2.8.4"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
