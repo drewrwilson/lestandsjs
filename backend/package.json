@@ -1,0 +1,9 @@
+{
+  "name": "leStands",
+  "description": "its a stands thing bro",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "restify" : "2.8.4"
+  }
+}
