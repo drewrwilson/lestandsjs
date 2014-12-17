@@ -5,6 +5,8 @@ var restify = require('restify');  //package for API routes
         pg; //database
 */
 
+var port = process.env.PORT || 80; //to deploy on heroku
+
 var server = restify.createServer({
   name: 'lestands',
   version: '1.0.0'
@@ -158,6 +160,6 @@ server.get('/stands/:id/updates/:updateID', function (req, res, next) {
   return next();
 });
 
-server.listen(80, function () {
+server.listen(port, function () {
   console.log('%s listening at url %s', server.name, server.url);
 });
