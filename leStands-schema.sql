@@ -1,20 +1,7 @@
--- phpMyAdmin SQL Dump
--- version 3.3.10.4
--- http://www.phpmyadmin.net
---
--- Host: mysql.lestands.com
--- Generation Time: Dec 16, 2014 at 11:42 PM
--- Server version: 5.1.56
--- PHP Version: 5.3.27
+
 
 --
--- Database: "lestandstest"
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table "deployedStands"
+-- Table structure for table "stands"
 --
 
 CREATE TABLE IF NOT EXISTS "stands" (
