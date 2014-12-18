@@ -4330,3 +4330,8 @@ tr.odd.gradeX td.sorting_1, tr.even.gradeX td.sorting_1, table.display tr.even.g
     background: #fff;
     color: #757575;
 }
+
+#map {
+  width: 100%;
+  height:300px;
+}
