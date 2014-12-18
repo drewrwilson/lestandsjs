@@ -15,9 +15,17 @@ var app = app || {};
     index: function() {
       // TodoApp.trigger('fetchTodos', 'completed');
       console.log("index view");
+
+      //load dashboard
       app.standsView = new app.StandsView({
         el: $("#main-container"),
         collection: app.stands,
+      });
+
+      //load map view
+      app.mapView = new app.MapView({
+        el: $("#second-container")
+        // collection: app.stands //change this to geojson at some point
       });
     },
     show: function(id) {
