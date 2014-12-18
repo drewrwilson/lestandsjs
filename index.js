@@ -22,6 +22,45 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
+
+// connects to database
+// run select query on database
+// send result
+var sendSelection = function (query, params, res) {
+
+// get a pg client from the connection pool
+  pg.connect(connectionString, function(err, client, done) {
+
+    var handleError = function(err) {
+      // no error occurred, continue with the request
+      if(!err) return false;
+
+      // An error occurred, remove the client from the connection pool.
+      // A truthy value passed to done will remove the connection from the pool
+      // instead of simply returning it to be reused.
+      // In this case, if we have successfully received a client (truthy)
+      // then it will be removed from the pool.
+      done(client);
+      res.writeHead(500, {'content-type': 'text/plain'});
+      res.end('An error occurred');
+      return true;
+    };
+
+    // record the visit
+    client.query(query, params, function(err, result) {
+
+      // handle an error from the query
+      if(handleError(err)) return;
+
+      // return the client to the connection pool for other requests to reuse
+      done();
+
+      res.send(result.rows);
+
+    });
+  });
+}
+
 //Static routes:
 // /stands - show all stands
 // /stands/:id - show a specific stand
@@ -114,46 +153,12 @@ server.get('/stands/:id', function (req, res, next) {
 });
 
 
-
 // /stands/:id/updates
 // Returns an array of updates associated with a specified stand.
 // If there have been no updates, the array will be empty.
-// connects to database
-// SELECT * FROM updates WHERE stand_id = id
-// send
-server.get('/stands/:id/updates', function (req, res, next) {
+server.get('/stands/:standID/updates', function (req, res, next) {
 
-  // get a pg client from the connection pool
-  pg.connect(connectionString, function(err, client, done) {
-
-    var handleError = function(err) {
-      // no error occurred, continue with the request
-      if(!err) return false;
-
-      // An error occurred, remove the client from the connection pool.
-      // A truthy value passed to done will remove the connection from the pool
-      // instead of simply returning it to be reused.
-      // In this case, if we have successfully received a client (truthy)
-      // then it will be removed from the pool.
-      done(client);
-      res.writeHead(500, {'content-type': 'text/plain'});
-      res.end('An error occurred');
-      return true;
-    };
-
-    // record the visit
-    client.query('SELECT * FROM updates WHERE stand_id = ($1)', [req.params.id], function(err, result) {
-
-      // handle an error from the query
-      if(handleError(err)) return;
-
-      // return the client to the connection pool for other requests to reuse
-      done();
-
-      res.send(result.rows);
-
-    });
-  });
+  sendSelection('SELECT * FROM updates WHERE stand_id = ($1)', [req.params.standID], res);
 
   return next();
 });
