@@ -7,7 +7,7 @@
 CREATE TABLE IF NOT EXISTS "stands" (
   "id" serial NOT NULL,
   "name" varchar NOT NULL,
-  "description" text NOT NULL,
+  "description" text DEFAULT NULL,
   "geoLat" real DEFAULT NULL,
   "geoLong" real DEFAULT NULL,
   "address1" varchar DEFAULT NULL,
@@ -32,5 +32,4 @@ CREATE TABLE IF NOT EXISTS "updates" (
   "comments" text,
   PRIMARY KEY ("id")
 );
-
 
