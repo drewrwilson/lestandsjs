@@ -2,7 +2,7 @@
 -- Add some example stands!
 --
 
-INSERT INTO stands ("name","geoLat","geoLong","city","state") VALUES
+INSERT INTO stands ("name","geo_lat","geo_long","city","state") VALUES
   ('S Tryon & MLK #1','35.22478017491058','-80.84643602371216','Charlotte','NC'),
   ('S Tryon & MLK #2','35.22478893924818','-80.84629654884338','Charlotte','NC'),
   ('Outside Capital Grille','35.228114937026774','-80.84186553955078','Charlotte','NC'),
@@ -34,3 +34,10 @@ INSERT INTO stands ("name","geoLat","geoLong","city","state") VALUES
   ('Eco-Licious','35.218566021293256','-80.81265360116959','Charlotte','NC'),
   ('Bean Vegan Cuisine','35.204439980020425','-80.7925397157669','Charlotte','NC'),
   ('The Greener Apple','35.22066630944841','-80.81028655171394','Charlotte','NC');
+
+INSERT INTO "updates" ("stand_id", "date", "amount_when_checked", "amount_added", "comments") VALUES
+  ('1', 'March 15, 2014', '15', '80', 'the sticker is coming off'),
+  ('1', 'June 11, 2014', '45', '30', ''),
+  ('1', 'April 1, 2008', '0', '50', 'Just started'),
+  ('1', 'November 22, 2014', '0', '500', 'nooooooo');
+
