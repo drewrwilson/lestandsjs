@@ -29,6 +29,7 @@ server.use(restify.bodyParser());
 // /stands/:id/updates/:updateID - show a specific update for a specific stand
 // /geo - show geojson of all stands
 
+
 // /stands
 server.get('/stands', function (req, res, next) {
   var stands = [{
@@ -115,40 +116,45 @@ server.get('/stands/:id', function (req, res, next) {
 
 
 // /stands/:id/updates
-// this is hard-coded to updates from stand with id=1
+// Returns an array of updates associated with a specified stand.
+// If there have been no updates, the array will be empty.
+// connects to database
+// SELECT * FROM updates WHERE stand_id = id
+// send
 server.get('/stands/:id/updates', function (req, res, next) {
-  var updates = [
-  {
-    "id": 1,
-    "date": "March 15, 2014",
-    "amountWhenChecked": 15,
-    "amountAdded": 80,
-    "comments": "the sticker is coming off"
-  },
-  {
-    "id": 115,
-    "date": "June 11, 2014",
-    "amountWhenChecked": 45,
-    "amountAdded": 30,
-    "comments": ""
-  },
-  {
-    "id": 135,
-    "date": "April 1, 2008",
-    "amountWhenChecked": 0,
-    "amountAdded": 50,
-    "comments": "Just started"
-  },
-  {
-    "id": 1235,
-    "date": "November 22, 2014",
-    "amountWhenChecked": 0,
-    "amountAdded": 500,
-    "comments": "nooooooo"
-  }
-  ];
 
-  res.send(updates);
+  // get a pg client from the connection pool
+  pg.connect(connectionString, function(err, client, done) {
+
+    var handleError = function(err) {
+      // no error occurred, continue with the request
+      if(!err) return false;
+
+      // An error occurred, remove the client from the connection pool.
+      // A truthy value passed to done will remove the connection from the pool
+      // instead of simply returning it to be reused.
+      // In this case, if we have successfully received a client (truthy)
+      // then it will be removed from the pool.
+      done(client);
+      res.writeHead(500, {'content-type': 'text/plain'});
+      res.end('An error occurred');
+      return true;
+    };
+
+    // record the visit
+    client.query('SELECT * FROM updates WHERE stand_id = ($1)', [req.params.id], function(err, result) {
+
+      // handle an error from the query
+      if(handleError(err)) return;
+
+      // return the client to the connection pool for other requests to reuse
+      done();
+
+      res.send(result.rows);
+
+    });
+  });
+
   return next();
 });
 
