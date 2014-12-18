@@ -85,39 +85,53 @@ var sendSelection = function (query, params, res, preProcess) {
 
 // /stands
 server.get('/stands', function (req, res, next) {
-  var stands = [{
-    "id": 1,
-    "name": "16th & Mission",
-    "pic": "stand1.jpg",
-    "description": "Amber's stand outside Herbivore",
-    "dateDeployed": "Aug 20, 2013",
-    "dateRetired": "",
-    "totalDistributed": 555,
-    "totalUpdates": 5,
-    "lastUpdateDate": "2014-10-01"
-  }, {
-    "id": 2,
-    "name": "9th & Howard",
-    "pic": "stand2.jpg",
-    "description": "Outside Code for America",
-    "dateDeployed": "Aug 30, 2013",
-    "dateRetired": "",
-    "totalDistributed": 222,
-    "totalUpdates": 2,
-    "lastUpdateDate": "2014-06-01"
-  }, {
-    "id": 3,
-    "name": "2nd & Market",
-    "pic": "stand3.jpg",
-    "description": "Its right there",
-    "dateDeployed": "Aug 13, 2011",
-    "dateRetired": "",
-    "totalDistributed": 432,
-    "totalUpdates": 20,
-    "lastUpdateDate": "2014-09-20"
-  }];
 
-  res.send(stands);
+  var query = 'WITH last_updates AS ' +
+                  '(SELECT ' +
+                    'stand_id as id, ' +
+                    'MAX(date) AS lastUpdateDate, ' +
+                    'SUM(amount_added) AS totalDistributed, ' +
+                    'COUNT(id) AS totalUpdates ' +
+                    'FROM updates GROUP BY id ' +
+                  ') ' +
+               'SELECT stands.name, stands.description, last_updates.* ' +
+               'FROM last_updates JOIN stands ON last_updates.id = stands.id';
+
+  sendSelection(query, [], res);
+
+  // var stands = [{
+  //   "id": 1,
+  //   "name": "16th & Mission",
+  //   "pic": "stand1.jpg",
+  //   "description": "Amber's stand outside Herbivore",
+  //   "dateDeployed": "Aug 20, 2013",
+  //   "dateRetired": "",
+  //   "totalDistributed": 555,
+  //   "totalUpdates": 5,
+  //   "lastUpdateDate": "2014-10-01"
+  // }, {
+  //   "id": 2,
+  //   "name": "9th & Howard",
+  //   "pic": "stand2.jpg",
+  //   "description": "Outside Code for America",
+  //   "dateDeployed": "Aug 30, 2013",
+  //   "dateRetired": "",
+  //   "totalDistributed": 222,
+  //   "totalUpdates": 2,
+  //   "lastUpdateDate": "2014-06-01"
+  // }, {
+  //   "id": 3,
+  //   "name": "2nd & Market",
+  //   "pic": "stand3.jpg",
+  //   "description": "Its right there",
+  //   "dateDeployed": "Aug 13, 2011",
+  //   "dateRetired": "",
+  //   "totalDistributed": 432,
+  //   "totalUpdates": 20,
+  //   "lastUpdateDate": "2014-09-20"
+  // }];
+
+  // res.send(stands);
   return next();
 });
 
