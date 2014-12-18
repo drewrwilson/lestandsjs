@@ -85,39 +85,22 @@ var sendSelection = function (query, params, res, preProcess) {
 
 // /stands
 server.get('/stands', function (req, res, next) {
-  var stands = [{
-    "id": 1,
-    "name": "16th & Mission",
-    "pic": "stand1.jpg",
-    "description": "Amber's stand outside Herbivore",
-    "dateDeployed": "Aug 20, 2013",
-    "dateRetired": "",
-    "totalDistributed": 555,
-    "totalUpdates": 5,
-    "lastUpdateDate": "2014-10-01"
-  }, {
-    "id": 2,
-    "name": "9th & Howard",
-    "pic": "stand2.jpg",
-    "description": "Outside Code for America",
-    "dateDeployed": "Aug 30, 2013",
-    "dateRetired": "",
-    "totalDistributed": 222,
-    "totalUpdates": 2,
-    "lastUpdateDate": "2014-06-01"
-  }, {
-    "id": 3,
-    "name": "2nd & Market",
-    "pic": "stand3.jpg",
-    "description": "Its right there",
-    "dateDeployed": "Aug 13, 2011",
-    "dateRetired": "",
-    "totalDistributed": 432,
-    "totalUpdates": 20,
-    "lastUpdateDate": "2014-09-20"
-  }];
 
-  res.send(stands);
+var query = 'WITH \
+    stats AS (SELECT  \
+      "standID" AS id,\
+      MAX(date) AS "lastUpdateDate",  \
+      SUM("amountAdded") AS "totalDistributed",  \
+      COUNT(id) AS "totalUpdates"  \
+      FROM updates GROUP BY "standID"  \
+    )\
+  SELECT stands.id, stands.name, stands.description, \
+        stats."lastUpdateDate", stats."totalDistributed", stats."totalUpdates" \
+  FROM stands LEFT OUTER JOIN stats ON stats.id = stands.id \
+  ORDER BY id;'
+
+  sendSelection(query, [], res);
+
   return next();
 });
 
