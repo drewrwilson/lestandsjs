@@ -183,15 +183,6 @@ server.get('/stands/:standID/updates/:updateID', function (req, res, next) {
 
   sendSelectionFirstRow('SELECT * FROM updates WHERE stand_id = ($1) AND id = ($2)', [req.params.standID, req.params.updateID], res);
 
-  // var update = {
-  //   "id": 1,
-  //   "date": "March 15, 2014",
-  //   "amountWhenChecked": 15,
-  //   "amountAdded": 80,
-  //   "comments": "the sticker is coming off"
-  // };
-
-  // res.send(update);
   return next();
 });
 
