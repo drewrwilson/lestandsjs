@@ -179,7 +179,6 @@ server.get('/stands/:standID/updates', function (req, res, next) {
 
 
 // /stands/:id/updates/:updateID
-// this is hard-coded to be update #1 on stand #1
 server.get('/stands/:standID/updates/:updateID', function (req, res, next) {
 
   sendSelectionFirstRow('SELECT * FROM updates WHERE stand_id = ($1) AND id = ($2)', [req.params.standID, req.params.updateID], res);
