@@ -39,17 +39,26 @@ var app = app || {};
               } else if ( thisLastUpdated < mostRecentUpdate) {
                 mostRecentUpdate = thisLastUpdated;
               }
-              console.log(stand);
 
               view.stands.push(stand);
 
             }, this);
 
+
+            //calculate days since checked
             today = new Date();
             view.daysSinceChecked = Math.floor((today - mostRecentUpdate) / (1000*60*60*24));
 
             html = this.template(view);
             this.$el.html(html)
+
+            //generate the map
+            // this is after adding the html to the DOM because it uses jquery. Kinda hacky, but works.
+            L.mapbox.accessToken = 'pk.eyJ1IjoiZHJld3J3aWxzb24iLCJhIjoiUkplQ29iUSJ9.6cM-yTJjzxwfCWUNDOgi8w';
+            var map = L.mapbox.map(this.$('#map')[0], 'drewrwilson.kh2igidk')
+            .setView([35.1900268,-80.812835], 11);
+            var myLayer = L.geoJson(geodata,{}).addTo(map);
+            myLayer.addData(geodata);
         }
   });
 

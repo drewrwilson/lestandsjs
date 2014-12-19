@@ -103,9 +103,6 @@
             <div id="main-container">
             </div>
 
-            <div id="second-container">
-            </div>
-
             <!-- THIS IS THE TEMPLATE FOR A SINGLE STAND VIEW  -->
             <script id="single-stand-template" type="text/template">
               <div class="row">
@@ -231,14 +228,7 @@
 
           ********************************************* -->
 
-          <script id="map-template" type="text/template">
-          <h1>Map of your stands</h1>
-          <div id="map"></div>
-          </script> <!-- END TEMPLATE FOR MAP VIEW -->
 
-          <!-- *********************************************
-
-          ********************************************* -->
 
             <!-- THIS IS THE TEMPLATE FOR THE STANDS OVERVIEW -->
             <script id="all-stands-template" type="text/template">
@@ -300,6 +290,13 @@
                   <div class="col-xs-12 ">
                     <a href="#" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add an update</a>
                   </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <h1>Map of your stands</h1>
+                  <div id="map"></div>
+                </div>
               </div>
 
               <div class="row">
@@ -491,6 +488,9 @@
       <!--main content end-->
   </section>
 
+  <!-- scripts for maps -->
+    <script src='assets/js/mapbox.js'></script>
+
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery-1.11.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -500,22 +500,24 @@
     <script src="assets/js/common-scripts.js"></script>
 
 
+
     <!--scripts for backbone-->
     <script src="assets/js/underscore.js"></script>
     <script src="assets/js/backbone.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+    <script src="assets/js/geojson.min.js"></script>
+
+
+
 
     <script src="app/models/stands.js"></script>
-    <script src="app/models/map.js"></script>
 		<script src="app/collections/stands.js"></script>
-    <script src="app/views/map-view.js"></script>
+
     <script src="app/views/stands-view.js"></script>
 		<script src="app/views/app-view.js"></script>
     <script src="app/routers/router.js"></script>
     <script src="app/app.js"></script>
 
-    <!-- scripts for maps -->
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
 
   </body>
 </html>
