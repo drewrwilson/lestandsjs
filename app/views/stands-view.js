@@ -44,6 +44,8 @@ var app = app || {};
 
             }, this);
 
+            //convert the stands data to geojson
+            var geodata = GeoJSON.parse(view.stands, {Point: ['geo_lat', 'geo_long']});
 
             //calculate days since checked
             today = new Date();
