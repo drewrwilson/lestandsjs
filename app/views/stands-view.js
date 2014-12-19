@@ -61,6 +61,7 @@ var app = app || {};
             .setView([35.1900268,-80.812835], 11);
             var myLayer = L.geoJson(geodata,{}).addTo(map);
             myLayer.addData(geodata);
+            map.scrollWheelZoom.disable();
         }
   });
 
