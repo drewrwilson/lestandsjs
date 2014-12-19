@@ -95,8 +95,8 @@ var query = 'WITH \
       FROM updates GROUP BY "standID"  \
     )\
   SELECT stands.id, stands.name, stands.description, stands."geoLat", stands."geoLong", \
-        stands.address1, stands.address2, stands.city, stands.state, stands.zip, \
-        stats."lastUpdateDate", stats."totalDistributed", stats."totalUpdates" \
+         stands.address1, stands.address2, stands.city, stands.state, stands.zip, \
+         stats."lastUpdateDate", stats."totalDistributed", stats."totalUpdates" \
   FROM stands LEFT OUTER JOIN stats ON stats.id = stands.id \
   ORDER BY id;'
 
