@@ -125,6 +125,7 @@ server.get('/stands', function (req, res, next) {
   return next();
 });
 
+
 // /stands/:id
 server.get('/stands/:standID', function (req, res, next) {
 
