@@ -1,7 +1,5 @@
-lestandsJS
+leStandsJS?
 ==========
-
-# What is leStands?
 [leStands](http://lestands.com) is a web application that helps volunteers country track the performance of free literature stands.
 
 leStandsJS is a new javascript version of lestands. It's primarily a frontend application with a lightweight API backend.
@@ -11,7 +9,7 @@ leStandsJS is a new javascript version of lestands. It's primarily a frontend ap
 * Backend: NodeJS with restify for routes and postgres for the database.
 * Deployed on heroku
 
-# How do I run application locally?
+# How do I run the application locally?
 ## Frontend
 
 Switch to the `master` branch and run this in your code directory
@@ -31,7 +29,9 @@ Switch to the `backend` branch.
  * Run `npm install`
  * Run `npm start`
 
-If you want your local frontend to consume your local backend, you need to update the references to the api in the frontend code. But don't commit those changes to the github repo, ok? :)
+Note: since they're on different branches you can't really run both at the same time. The way I do it is I deploy the backend to heroku and run the frontend locally.
+
+And if you want your local frontend to consume your the backend that you deployed, you need to update the references to the api in the frontend code. But don't commit those changes to the github repo, ok? :)
 
 # How can I help?
 ## Report a bug or suggest a feature
