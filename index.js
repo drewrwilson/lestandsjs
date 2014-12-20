@@ -153,46 +153,6 @@ server.get('/stands/:standID', function (req, res, next) {
   var selectUpdatesQuery = 'SELECT * FROM updates WHERE "standID" = ($1)';
   queryDB(selectUpdatesQuery, [req.params.standID], res, sendStand);
 
-
-  // sendSelection(query, req.params.standID, res, preProcess);
-
-  // var stand = {
-  //   "id": 1,
-  //   "name": "16th & Mission",
-  //   "description": "Amber's stand outside Herbivore",
-  //   "updates" : [
-  //   {
-  //     "id": 1,
-  //     "date": "March 15, 2014",
-  //     "amountWhenChecked": 15,
-  //     "amountAdded": 80,
-  //     "comments": "the sticker is coming off"
-  //   },
-  //   {
-  //     "id": 115,
-  //     "date": "June 11, 2014",
-  //     "amountWhenChecked": 45,
-  //     "amountAdded": 30,
-  //     "comments": ""
-  //   },
-  //   {
-  //     "id": 135,
-  //     "date": "April 1, 2008",
-  //     "amountWhenChecked": 0,
-  //     "amountAdded": 50,
-  //     "comments": "Just started"
-  //   },
-  //   {
-  //     "id": 1235,
-  //     "date": "November 22, 2014",
-  //     "amountWhenChecked": 0,
-  //     "amountAdded": 500,
-  //     "comments": "nooooooo"
-  //   }
-  //   ]
-  // };
-
-  // res.send(stand);
   return next();
 });
 
