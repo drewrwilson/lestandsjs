@@ -97,7 +97,6 @@ var sendSelectionFirstRow = function (query, params, res) {
 // /stands/:id - show a specific stand
 // /stands/:id/updates - show all updates for a specific stand
 // /stands/:id/updates/:updateID - show a specific update for a specific stand
-// /geo - show geojson of all stands
 
 
 // /stands
