@@ -35,6 +35,14 @@ INSERT INTO stands ("name","geoLat","geoLong","city","state") VALUES
   ('Bean Vegan Cuisine','35.204439980020425','-80.7925397157669','Charlotte','NC'),
   ('The Greener Apple','35.22066630944841','-80.81028655171394','Charlotte','NC');
 
+
+--
+-- Initial updates for all stands (each one getting 250 pieces of lit)
+--
+INSERT INTO updates ("standID", "date", "amountWhenChecked", "amountAdded", "comments")
+SELECT id AS "standID", '1-1-2015', 0, 250, '' FROM stands;
+
+
 --
 -- Plus some specific updates
 --
