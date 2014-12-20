@@ -72,6 +72,10 @@ var queryDB = function (query, params, res, outputHandler) {
 // does nothing. See `sendSelectionFirstRow` for example of how this could be used.
 var sendSelection = function (query, params, res, preProcess) {
 
+  if (typeof preProcess === 'undefined') {
+    preProcess = function (rows) { return rows; };
+  }
+
   var outputHandler = function (rows) {
     res.send(preProcess(rows));
   };
