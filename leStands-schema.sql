@@ -1,3 +1,7 @@
+-- If the table already exists, drop it
+DROP TABLE IF EXISTS "stands";
+DROP TABLE IF EXISTS "updates";
+
 
 
 --
@@ -32,4 +36,3 @@ CREATE TABLE IF NOT EXISTS "updates" (
   "comments" text,
   PRIMARY KEY ("id")
 );
-
