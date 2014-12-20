@@ -149,7 +149,7 @@ server.get('/stands/:standID', function (req, res, next) {
     sendSelection(selectStandQuery, [req.params.standID], res, preProcess);
   };
 
-  var selectUpdatesQuery = 'SELECT * FROM updates WHERE stand_id = ($1)';
+  var selectUpdatesQuery = 'SELECT * FROM updates WHERE "standID" = ($1)';
   queryDB(selectUpdatesQuery, [req.params.standID], res, sendStand);
 
 
@@ -201,7 +201,7 @@ server.get('/stands/:standID', function (req, res, next) {
 // If there have been no updates, the array will be empty.
 server.get('/stands/:standID/updates', function (req, res, next) {
 
-  sendSelection('SELECT * FROM updates WHERE stand_id = ($1)', [req.params.standID], res);
+  sendSelection('SELECT * FROM updates WHERE "standID" = ($1)', [req.params.standID], res);
 
   return next();
 });
@@ -210,7 +210,7 @@ server.get('/stands/:standID/updates', function (req, res, next) {
 // /stands/:id/updates/:updateID
 server.get('/stands/:standID/updates/:updateID', function (req, res, next) {
 
-  sendSelectionFirstRow('SELECT * FROM updates WHERE stand_id = ($1) AND id = ($2)', [req.params.standID, req.params.updateID], res);
+  sendSelectionFirstRow('SELECT * FROM updates WHERE "standID" = ($1) AND id = ($2)', [req.params.standID, req.params.updateID], res);
 
   return next();
 });
