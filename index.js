@@ -22,31 +22,6 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
-// instead of sending an array of results, return just the first one.
-// useful when you know there should only be one result.
-
-var sendSelectionFirstRow = function(query, params, res) {
-  var preProcess = function (rows) {
-    return rows[0];
-    // TODO: what to return if there is no rows[0]? (if rows.length < 1)
-  };
-  sendSelection(query, params, res, preProcess);
-};
-
-// connects to database
-// run select query on database
-// send result
-// before rows are sent, they're run through an optional preProcess function which by default
-// does nothing. See `sendSelectionFirstRow` for example of how this could be used.
-var sendSelection = function (query, params, res, preProcess) {
-
-  var outputHandler = function (rows) {
-    res.send(preProcess(rows));
-  };
-
-  queryDB(query, params, res, outputHandler);
-};
-
 
 // send the database the given query and send the response to the handler
 var queryDB = function (query, params, res, outputHandler) {
@@ -87,6 +62,31 @@ var queryDB = function (query, params, res, outputHandler) {
   });
 };
 
+
+// connects to database
+// run select query on database
+// send result
+// before rows are sent, they're run through an optional preProcess function which by default
+// does nothing. See `sendSelectionFirstRow` for example of how this could be used.
+var sendSelection = function (query, params, res, preProcess) {
+
+  var outputHandler = function (rows) {
+    res.send(preProcess(rows));
+  };
+
+  queryDB(query, params, res, outputHandler);
+};
+
+
+// instead of sending an array of results, return just the first one.
+// useful when you know there should only be one result.
+var sendSelectionFirstRow = function(query, params, res) {
+  var preProcess = function (rows) {
+    return rows[0];
+    // TODO: what to return if there is no rows[0]? (if rows.length < 1)
+  };
+  sendSelection(query, params, res, preProcess);
+};
 
 
 
