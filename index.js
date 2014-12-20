@@ -35,7 +35,7 @@ var queryDB = function (query, params, res, outputHandler) {
 
     var handleError = function (err) {
       // no error occurred, continue with the request
-      if (!err) return false;
+      if (!err) { return false; }
 
       // An error occurred, remove the client from the connection pool.
       // A truthy value passed to done will remove the connection from the pool
@@ -53,7 +53,7 @@ var queryDB = function (query, params, res, outputHandler) {
     client.query(query, params, function (err, result) {
 
       // handle an error from the query
-      if (handleError(err)) return;
+      if (handleError(err)) { return; }
 
       // return the client to the connection pool for other requests to reuse
       done();
@@ -115,7 +115,7 @@ server.get('/stands', function (req, res, next) {
          stands.address1, stands.address2, stands.city, stands.state, stands.zip, \
          stats."lastUpdateDate", stats."totalDistributed", stats."totalUpdates" \
   FROM stands LEFT OUTER JOIN stats ON stats.id = stands.id \
-  ORDER BY id;'
+  ORDER BY id;';
 
   sendSelection(query, [], res);
 
@@ -146,7 +146,7 @@ server.get('/stands/:standID', function (req, res, next) {
     sendSelection(selectStandQuery, [req.params.standID], res, preProcess);
   };
 
-  var selectUpdatesQuery = 'SELECT * FROM updates WHERE stand_id = ($1)'
+  var selectUpdatesQuery = 'SELECT * FROM updates WHERE stand_id = ($1)';
   queryDB(selectUpdatesQuery, [req.params.standID], res, sendStand);
 
 
