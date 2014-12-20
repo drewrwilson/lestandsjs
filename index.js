@@ -45,7 +45,7 @@ var queryDB = function (query, params, res, outputHandler) {
       done(client);
 
       res.writeHead(500, {'content-type': 'text/plain'});
-      res.end('An error occurred');
+      res.end('An error occurred, ' + err);
       return true;
     };
 
