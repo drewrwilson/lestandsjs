@@ -175,7 +175,9 @@
                               </div>
                               <div class="col-xs-10">
                                 <h2>{{name}}</h2>
-                                <span class="">date deployed: {{stand.dateDeployed}}</span>
+                                <p>
+                                  {{description}}
+                                </p>
                                 <br />
                                 <span class="muted hidden-sm hidden-xs" style="font-style:italic; font-size:90%;">{{stand.description}}</span>
                               </div>
@@ -204,7 +206,7 @@
                                   <tbody>
                                   {{#stand.updates}}
                                     <tr>
-                                        <td>{{date}}</td>
+                                        <td>{{longDate date}}</td>
                                         <td><a href="#">{{amountWhenChecked}}</a></td>
                                         <td class="hidden-xs">{{amountAdded}}</td>
                                         <td class="hidden-xs">{{comments}}</td>

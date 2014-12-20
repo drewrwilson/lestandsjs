@@ -4,6 +4,33 @@ Handlebars functions
 *************************
 */
 
+var fullMonthNames = new Array("January", "February", "March",
+"April", "May", "June", "July", "August", "September",
+"October", "November", "December");
+
+var shortMonthNames = new Array("Jan", "Feb", "Mar",
+"Apr", "May", "Jun", "Jul", "Aug", "Sep",
+"Oct", "Nov", "Dec");
+
+// take a date string and make it look like a short, human-readable date
+// eg 1/1/2015
+Handlebars.registerHelper("shortDate", function(d) {
+  var date = new Date(d);
+  return date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear();
+});
+
+// eg Jan 1, 2015
+Handlebars.registerHelper("mediumDate", function(d) {
+  var date = new Date(d);
+  return shortMonthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
+});
+
+//eg January 1, 2015
+Handlebars.registerHelper("longDate", function(d) {
+  var date = new Date(d);
+  return fullMonthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
+});
+
 var daysSince = function(date) {
   var givenDate = new Date(date),
       today = new Date();
