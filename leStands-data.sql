@@ -35,6 +35,9 @@ INSERT INTO stands ("name","geoLat","geoLong","city","state") VALUES
   ('Bean Vegan Cuisine','35.204439980020425','-80.7925397157669','Charlotte','NC'),
   ('The Greener Apple','35.22066630944841','-80.81028655171394','Charlotte','NC');
 
+--
+-- Plus some specific updates
+--
 INSERT INTO "updates" ("standID", "date", "amountWhenChecked", "amountAdded", "comments") VALUES
   ('1', 'March 15, 2014', '15', '80', 'the sticker is coming off'),
   ('1', 'June 11, 2014', '45', '30', ''),
