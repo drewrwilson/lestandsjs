@@ -26,14 +26,16 @@ server.use(restify.bodyParser());
 // send the database the given query and send the response to the handler
 var queryDB = function (query, params, res, outputHandler) {
 
-  if(typeof(outputHandler)==='undefined') outputHandler = function(rows) { return rows; };
+  if (typeof outputHandler === 'undefined') {
+    outputHandler = function (rows) { return rows; };
+  }
 
   // get a pg client from the connection pool
-  pg.connect(connectionString, function(err, client, done) {
+  pg.connect(connectionString, function (err, client, done) {
 
-    var handleError = function(err) {
+    var handleError = function (err) {
       // no error occurred, continue with the request
-      if(!err) return false;
+      if (!err) return false;
 
       // An error occurred, remove the client from the connection pool.
       // A truthy value passed to done will remove the connection from the pool
@@ -48,10 +50,10 @@ var queryDB = function (query, params, res, outputHandler) {
     };
 
     // record the visit
-    client.query(query, params, function(err, result) {
+    client.query(query, params, function (err, result) {
 
       // handle an error from the query
-      if(handleError(err)) return;
+      if (handleError(err)) return;
 
       // return the client to the connection pool for other requests to reuse
       done();
@@ -80,7 +82,7 @@ var sendSelection = function (query, params, res, preProcess) {
 
 // instead of sending an array of results, return just the first one.
 // useful when you know there should only be one result.
-var sendSelectionFirstRow = function(query, params, res) {
+var sendSelectionFirstRow = function (query, params, res) {
   var preProcess = function (rows) {
     return rows[0];
     // TODO: what to return if there is no rows[0]? (if rows.length < 1)
@@ -101,7 +103,7 @@ var sendSelectionFirstRow = function(query, params, res) {
 // /stands
 server.get('/stands', function (req, res, next) {
 
-var query = 'WITH \
+  var query = 'WITH \
     stats AS (SELECT  \
       "standID" AS id,\
       MAX(date) AS "lastUpdateDate",  \
