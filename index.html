@@ -11,15 +11,15 @@
     <title>leStands</title>
 
     <!-- Bootstrap compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
     <!--external css-->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet" />
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+    <link href='assets/css/mapbox-v2.1.4.css' rel='stylesheet' />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -489,28 +489,22 @@
       <!--main content end-->
   </section>
 
-  <!-- scripts for maps -->
-    <script src='assets/js/mapbox.js'></script>
-
-    <!-- js placed at the end of the document so the pages load faster -->
+    <!-- external resources -->
     <script src="assets/js/jquery-1.11.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bootstrap-datepicker.js"></script>
+    <script src='assets/js/mapbox.js'></script>
+
+    <!--general scripts for backbone-->
+    <script src="assets/js/underscore.js"></script>
+    <script src="assets/js/backbone.js"></script>
+    <script src="assets/js/handlebars.min.js"></script>
+    <script src="assets/js/geojson.min.js"></script>
 
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
 
-
-
-    <!--scripts for backbone-->
-    <script src="assets/js/underscore.js"></script>
-    <script src="assets/js/backbone.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
-    <script src="assets/js/geojson.min.js"></script>
-
-
-
-
+    <!--app scripts Models, Views, Router, etc-->
     <script src="app/models/stands.js"></script>
 		<script src="app/collections/stands.js"></script>
 
