@@ -198,6 +198,22 @@ server.get('/stands/:standID/updates/:updateID', function (req, res, next) {
   return next();
 });
 
+// POST a new update to /stands/:standID/updates
+// On success, returns the ID of the new update which can later
+// be fetched by a GET request to /stands/:standID/updates/:id.
+// On error, returns an error string.
+server.post('/stands/:standID/updates', function (req, res, next) {
+
+  var sql = 'INSERT INTO updates ("standID", "date", "amountWhenChecked", "amountAdded") VALUES (($1), ($2), ($3), ($4))  RETURNING id;';
+
+  var outputHandler = function (rows) {
+    res.send(rows[0]);
+  }
+
+  queryDB(sql, [req.params.standID, req.body.date, req.body.amountWhenChecked, req.body.amountAdded], res, outputHandler);
+
+  return next();
+});
 
 
 server.listen(port, function () {
