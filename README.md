@@ -13,9 +13,16 @@ leStandsJS is a new javascript version of lestands. It's primarily a frontend ap
 * Deployed on heroku
 
 # Screenshots
+## Dashboard pic 1
 ![](assets/img/screenshots/dashboard-1.png "Dashboard screenshot #1")
+
+## Dashboard pic 2
 ![](assets/img/screenshots/dashboard-2.png "Dashboard screenshot #2")
+
+## Individual stand
 ![](assets/img/screenshots/individual-stand.png "Individual stand screenshot")
+
+## Add an update
 ![](assets/img/screenshots/add-an-update.png "Add an update screenshot")
 
 # How do I run the application locally?
