@@ -1,8 +1,12 @@
 -- If the table already exists, drop it
 DROP TABLE IF EXISTS "stands";
 DROP TABLE IF EXISTS "updates";
+DROP TYPE IF EXISTS "standtype";
+--
+-- enum type of stand
+--
 
-
+CREATE TYPE standtype AS ENUM ('modular', 'green', 'wire');
 
 --
 -- Table structure for table "stands"
@@ -19,6 +23,7 @@ CREATE TABLE IF NOT EXISTS "stands" (
   "city" varchar DEFAULT NULL,
   "state" varchar DEFAULT NULL,
   "zip" varchar DEFAULT NULL,
+  "type" standtype DEFAULT 'green',
   PRIMARY KEY (id)
 );
 
