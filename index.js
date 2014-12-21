@@ -109,6 +109,22 @@ var sendSelectionFirstRow = function (query, params, res) {
 // /stands/:id/updates/:updateID - show a specific update for a specific stand
 
 
+// this is just a route for the index of the API
+server.get('/', function (req, res, next) {
+  var bs = {
+    "this": "",
+    "API": "",
+    "is": "",
+    "just": "",
+    "a": "",
+    "test": ""
+  };
+
+  res.send(bs);
+  return next();
+});
+
+
 // /stands
 server.get('/stands', function (req, res, next) {
 
@@ -181,24 +197,6 @@ server.get('/stands/:standID/updates/:updateID', function (req, res, next) {
 
   return next();
 });
-
-
-
-// this is just a route for the index of the API
-server.get('/', function (req, res, next) {
-  var bs = {
-    "this": "",
-    "API": "",
-    "is": "",
-    "just": "",
-    "a": "",
-    "test": ""
-  };
-
-  res.send(bs);
-  return next();
-});
-
 
 
 
