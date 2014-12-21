@@ -215,6 +215,28 @@ server.post('/stands/:standID/updates', function (req, res, next) {
   return next();
 });
 
+// DELETE a specific update
+server.del('/stands/:standID/updates/:updateID', function (req, res, next) {
+
+  var sql = 'DELETE FROM updates WHERE id = ($1) RETURNING id;';
+
+  var outputHandler = function (rows) {
+    // the following commented code works as a substitute to sending 204
+    // var message;
+    // if (rows.length) {
+    //   message = { status: "success" }
+    // } else {
+    //   message = { status: "failure" }
+    // }
+    // res.send(message);
+    res.send(204);
+  }
+
+  queryDB(sql, [req.params.updateID], res, outputHandler);
+
+  return next();
+});
+
 
 server.listen(port, function () {
   console.log('%s listening at url %s', server.name, server.url);
