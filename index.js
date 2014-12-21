@@ -1,5 +1,11 @@
 var restify = require('restify');  //package for API routes
 var pg = require('pg');  //package for SQL db
+
+// return integer column values as numbers not strings
+// See https://github.com/brianc/node-postgres/wiki/pg#pgdefaultsparseint8
+// and https://github.com/brianc/node-postgres/issues/378.
+pg.defaults.parseInt8 = true;
+
 /*
     ToDo:
         passportJS, //user auth
