@@ -19,10 +19,10 @@ leStandsJS is a new javascript version of lestands. It's primarily a frontend ap
 ## Dashboard pic 2
 ![](assets/img/screenshots/dashboard-2.png "Dashboard screenshot #2")
 
-## Individual stand
+## Individual stand pic
 ![](assets/img/screenshots/individual-stand.png "Individual stand screenshot")
 
-## Add an update
+## Add an update pic
 ![](assets/img/screenshots/add-an-update.png "Add an update screenshot")
 
 # How do I run the application locally?
