@@ -1,8 +1,11 @@
 leStandsJS?
 ==========
+
 [leStands](http://lestands.com) is a web application that helps volunteers country track the performance of free literature stands.
 
 leStandsJS is a new javascript version of lestands. It's primarily a frontend application with a lightweight API backend.
+
+![le Stands](assets/img/takeone-xsm.png "le Stands")
 
 ## Tools used
 * Frontend: The frontend uses BackboneJS, UnderscoreJS, jQuery, Bootstrap, FontAwesome, HandlebarsJS, and LeafletJS.
