@@ -12,6 +12,12 @@ leStandsJS is a new javascript version of lestands. It's primarily a frontend ap
 * Backend: NodeJS with restify for routes and postgres for the database.
 * Deployed on heroku
 
+# Screenshots
+![](assets/img/screenshots/dashboard-1.png "Dashboard screenshot #1")
+![](assets/img/screenshots/dashboard-2.png "Dashboard screenshot #2")
+![](assets/img/screenshots/individual-stand.png "Individual stand screenshot")
+![](assets/img/screenshots/add-an-update.png "Add an update screenshot")
+
 # How do I run the application locally?
 ## Frontend
 
