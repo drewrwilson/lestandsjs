@@ -10,8 +10,8 @@ var app = app || {};
       "stands/create":   "createStand",  // #stands/create
       "stands/:id/edit":   "editStand",  // #stands/1/edit
       "stands/:id":   "show",  // #stands/1
-      "stands/:id/update":   "addUpdate",  // #updates/add/1
-      "update":   "addUpdate",  // #updates/add/1
+      "stands/:id/update":   "addUpdate",  // #stands/1/update
+      "update":   "addUpdate",  // #update
     },
     index: function() {
       // TodoApp.trigger('fetchTodos', 'completed');
