@@ -109,6 +109,22 @@ var sendSelectionFirstRow = function (query, params, res) {
 // /stands/:id/updates/:updateID - show a specific update for a specific stand
 
 
+// this is just a route for the index of the API
+server.get('/', function (req, res, next) {
+  var bs = {
+    "this": "",
+    "API": "",
+    "is": "",
+    "just": "",
+    "a": "",
+    "test": ""
+  };
+
+  res.send(bs);
+  return next();
+});
+
+
 // /stands
 server.get('/stands', function (req, res, next) {
 
@@ -182,24 +198,44 @@ server.get('/stands/:standID/updates/:updateID', function (req, res, next) {
   return next();
 });
 
+// POST a new update to /stands/:standID/updates
+// On success, returns the ID of the new update which can later
+// be fetched by a GET request to /stands/:standID/updates/:id.
+// On error, returns an error string.
+server.post('/stands/:standID/updates', function (req, res, next) {
 
+  var sql = 'INSERT INTO updates ("standID", "date", "amountWhenChecked", "amountAdded") VALUES (($1), ($2), ($3), ($4))  RETURNING id;';
 
-// this is just a route for the index of the API
-server.get('/', function (req, res, next) {
-  var bs = {
-    "this": "",
-    "API": "",
-    "is": "",
-    "just": "",
-    "a": "",
-    "test": ""
-  };
+  var outputHandler = function (rows) {
+    res.send(rows[0]);
+  }
 
-  res.send(bs);
+  queryDB(sql, [req.params.standID, req.body.date, req.body.amountWhenChecked, req.body.amountAdded], res, outputHandler);
+
   return next();
 });
 
+// DELETE a specific update
+server.del('/stands/:standID/updates/:updateID', function (req, res, next) {
 
+  var sql = 'DELETE FROM updates WHERE id = ($1) RETURNING id;';
+
+  var outputHandler = function (rows) {
+    // the following commented code works as a substitute to sending 204
+    // var message;
+    // if (rows.length) {
+    //   message = { status: "success" }
+    // } else {
+    //   message = { status: "failure" }
+    // }
+    // res.send(message);
+    res.send(204);
+  }
+
+  queryDB(sql, [req.params.updateID], res, outputHandler);
+
+  return next();
+});
 
 
 server.listen(port, function () {
