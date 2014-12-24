@@ -10,7 +10,7 @@ var app = app || {};
       "stands/create":   "createStand",  // #stands/create
       "stands/:id/edit":   "editStand",  // #stands/1/edit
       "stands/:id":   "show",  // #stands/1
-      "updates/add":   "addUpdate",  // #updates/add
+      "updates/add/:standID":   "addUpdate",  // #updates/add/1
     },
     index: function() {
       // TodoApp.trigger('fetchTodos', 'completed');
@@ -37,7 +37,7 @@ var app = app || {};
         }
       })
     },
-    addUpdate: function() {
+    addUpdate: function(standID) {
       // this fetches the data from the url with the ID as param, and on success creates a new view
       app.addUpdateView = new app.AddUpdateView({
         el: $("#main-container")
