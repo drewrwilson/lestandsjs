@@ -13,6 +13,10 @@ leStandsJS is a new javascript version of lestands. It's primarily a frontend ap
 * Deployed on heroku
 
 # Screenshots
+## Quick walkthrough
+![](assets/img/screenshots/lestands-walkthrough.gif "Animated walkthrough of lestands")
+
+
 ## Dashboard pic 1
 ![](assets/img/screenshots/dashboard-1.png "Dashboard screenshot #1")
 
