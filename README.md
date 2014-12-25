@@ -1,11 +1,11 @@
 leStandsJS?
 ==========
 
-[leStands](http://lestands.com) is a web application that helps volunteers country track the performance of free literature stands.
-
-leStandsJS is a new javascript version of lestands. It's primarily a frontend application with a lightweight API backend.
+[leStands](http://lestands.com) is a web application that helps organizations track & manage free literature stands.
 
 ![le Stands](assets/img/takeone-xsm.png "le Stands")
+
+leStandsJS is a new javascript version of lestands. It's primarily a frontend application with a lightweight API backend.
 
 ## Tools used
 * Frontend: The frontend uses BackboneJS, UnderscoreJS, jQuery, Bootstrap, FontAwesome, HandlebarsJS, and LeafletJS.
@@ -49,10 +49,9 @@ Switch to the `backend` branch.
  * Run `npm install`
  * Run `npm start`
 
-Note: since they're on different branches you can't really run both at the same time. The way I do it is I deploy the backend to heroku and run the frontend locally.
+Note: since they're on different branches you can't really run both at the same time. The way that I do it is I deploy the backend to a staging server on heroku and run the frontend locally.
 
 And if you want your local frontend to consume your the backend that you deployed, you need to update the references to the api in the frontend code. But don't commit those changes to the github repo, ok? :)
 
-# How can I help?
-## Report a bug or suggest a feature
-This project is using the issue tracker on this github repo as the main source for issues, bugs, and features. If you have a feature idea or if you have noticed a bug, please don't hesitate to file an issue.
+# How do I report a bug or suggest a feature?
+This project is using the issue tracker on this github repo as the main source for issues, bugs, and features. If you have a feature idea or if you have noticed a bug, please don't hesitate to file an issue. Also feel free to leave comments or send a pull request to fix an existing issue.
