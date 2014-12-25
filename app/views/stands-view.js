@@ -122,9 +122,21 @@ app.StandView = Backbone.View.extend({
           //determine how many days since last update
           today = new Date();
           view.daysSinceChecked = Math.floor((today - mostRecentUpdate) / (1000*60*60*24));
-
           html = this.template(view);
           this.$el.html(html)
+      },
+      events: {
+        "click a.delete": "deleteUpdate",
+      },
+      deleteUpdate: function(event) {
+        event.preventDefault();
+        var idString = event.target.id; //idString is the string of the ID for the event target
+        var id = idString.substr(14, idString.length); //cut out text "delete-update-" and result in just the ID number
+        id = +id; //convert string to int
+
+        //this console.log is a placeholder for where we need to trigger a json request that deletes an update with a given id
+        console.log("deleteUpdate action triggered. Deleting update with id #" + id);
+        ;
       }
 });
 
@@ -167,7 +179,7 @@ app.AddStandView = Backbone.View.extend({
       html = this.template(attributes);
       this.$el.html(html)
       $('.default-date-picker').datepicker();
-      }
+    }
 });
 
 
