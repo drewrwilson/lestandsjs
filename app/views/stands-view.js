@@ -130,13 +130,12 @@ app.StandView = Backbone.View.extend({
       },
       deleteUpdate: function(event) {
         event.preventDefault();
-        var idString = event.target.id; //idString is the string of the ID for the event target
-        var id = idString.substr(14, idString.length); //cut out text "delete-update-" and result in just the ID number
-        id = +id; //convert string to int
+        var clicked = $(event.target);
+        var updateID = clicked.attr('data-update-id');
+        var standID = clicked.attr('data-stand-id');
 
         //this console.log is a placeholder for where we need to trigger a json request that deletes an update with a given id
-        console.log("deleteUpdate action triggered. Deleting update with id #" + id);
-        ;
+        console.log("deleteUpdate action triggered. Deleting update with id #" + updateID + ', on stand with id #' + standID);
       }
 });
 

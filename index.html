@@ -196,17 +196,17 @@
                                   </tr>
                                   </thead>
                                   <tbody>
-                                  {{#stand.updates}}
+                                  {{#each stand.updates}}
                                     <tr>
                                         <td>{{longDate date}}</td>
                                         <td>{{amountWhenChecked}}</td>
                                         <td class="hidden-xs">{{amountAdded}}</td>
                                         <td class="hidden-xs">{{comments}}</td>
                                         <td class="text-center">
-                                          <a href="#" id="delete-update-{{id}}" alt="delete an update" class="delete btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
+                                          <a href="#" data-update-id="{{id}}" data-stand-id="{{../id}}" id="delete-update-{{id}}" alt="delete an update" class="delete btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
                                         </td>
                                     </tr>
-                                  {{/stand.updates}}
+                                  {{/each}}
                                   </tbody>
                               </table>
                               </section>
