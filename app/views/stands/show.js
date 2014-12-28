@@ -14,7 +14,7 @@ var app = app || {};
       render: function(){
           var view = {
             id: this.model.attributes.id,
-            totalDistributed: 0,
+            totalDistributed: this.model.attributes.totalDistributed,
             totalUpdates: 0,
             daysSinceChecked: null,
             stand:this.model.attributes
@@ -29,7 +29,6 @@ var app = app || {};
           // determine most recent update
 
           view.stand.updates.forEach(function(update){
-            view.totalDistributed += update.amountAdded; //add up the number of leaflets added
             currentUpdateDate = new Date(update.date);
             //determine which date is the latest update date
             if (mostRecentUpdate == null) {
