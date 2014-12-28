@@ -17,7 +17,6 @@ var app = app || {};
             id: this.model.attributes.id,
             totalDistributed: this.model.attributes.totalDistributed,
             totalUpdates: this.model.attributes.totalUpdates,
-            daysSinceChecked: this.model.daysSinceChecked(),
             stand: this.model.attributes
           }
 
