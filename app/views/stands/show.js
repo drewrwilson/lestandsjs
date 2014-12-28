@@ -14,9 +14,6 @@ var app = app || {};
       render: function(){
 
           var view = {
-            id: this.model.attributes.id,
-            totalDistributed: this.model.attributes.totalDistributed,
-            totalUpdates: this.model.attributes.totalUpdates,
             stand: this.model.attributes
           }
 
