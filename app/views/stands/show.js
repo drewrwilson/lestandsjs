@@ -12,12 +12,7 @@ var app = app || {};
           this.render();
       },
       render: function(){
-
-          var view = {
-            stand: this.model.attributes
-          }
-
-          html = this.template(view);
+          html = this.template(this.model.attributes);
           this.$el.html(html)
       },
       events: {
