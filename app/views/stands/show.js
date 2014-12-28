@@ -12,37 +12,21 @@ var app = app || {};
           this.render();
       },
       render: function(){
+
+          //to determine how many days since last update
+          var today = new Date();
+          var mostRecentUpdate = new Date(this.model.attributes.lastUpdateDate);
+
           var view = {
             id: this.model.attributes.id,
             totalDistributed: this.model.attributes.totalDistributed,
-            totalUpdates: 0,
-            daysSinceChecked: null,
-            stand:this.model.attributes
+            totalUpdates: this.model.attributes.totalUpdates,
+            daysSinceChecked: Math.floor((today - mostRecentUpdate) / (1000*60*60*24)),
+            stand: this.model.attributes
           }
-          view.totalUpdates = _.size(view.stand.updates);
-
-          // initial value
-          var mostRecentUpdate = null,
-              currentUpdateDate = null;;
 
           window.updates = view.stand.updates;
-          // determine most recent update
 
-          view.stand.updates.forEach(function(update){
-            currentUpdateDate = new Date(update.date);
-            //determine which date is the latest update date
-            if (mostRecentUpdate == null) {
-              mostRecentUpdate = new Date(update.date);
-            } else if ( currentUpdateDate > mostRecentUpdate) {
-              mostRecentUpdate = currentUpdateDate;
-            }
-
-            //view.stand.updates.push(update);
-          }); //end forEach
-
-          //determine how many days since last update
-          today = new Date();
-          view.daysSinceChecked = Math.floor((today - mostRecentUpdate) / (1000*60*60*24));
           html = this.template(view);
           this.$el.html(html)
       },
