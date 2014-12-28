@@ -13,15 +13,11 @@ var app = app || {};
       },
       render: function(){
 
-          //to determine how many days since last update
-          var today = new Date();
-          var mostRecentUpdate = new Date(this.model.attributes.lastUpdateDate);
-
           var view = {
             id: this.model.attributes.id,
             totalDistributed: this.model.attributes.totalDistributed,
             totalUpdates: this.model.attributes.totalUpdates,
-            daysSinceChecked: Math.floor((today - mostRecentUpdate) / (1000*60*60*24)),
+            daysSinceChecked: this.model.daysSinceChecked(),
             stand: this.model.attributes
           }
 
