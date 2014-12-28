@@ -158,10 +158,20 @@ server.get('/stands/:standID', function (req, res, next) {
 
   var sendStand = function (updates) {
 
-    var selectStandQuery = '\
+    // note this is similar to query for /stands but slightly different
+    var selectStandQuery = 'WITH \
+      stats AS (SELECT  \
+        "standID" AS id,\
+        MAX(date) AS "lastUpdateDate",  \
+        SUM("amountAdded") AS "totalDistributed",  \
+        COUNT(id) AS "totalUpdates"  \
+        FROM updates WHERE "standID" = ($1) GROUP BY "standID" \
+      )\
       SELECT stands.id, stands.name, stands.description, stands."geoLat", stands."geoLong", \
-             stands.address1, stands.address2, stands.city, stands.state, stands.zip \
-      FROM stands WHERE id = ($1) LIMIT 1'; // note LIMIT 1 sanity check (we only expect 1 anyway)
+             stands.address1, stands.address2, stands.city, stands.state, stands.zip, \
+             stats."lastUpdateDate", stats."totalDistributed", stats."totalUpdates" \
+      FROM stands LEFT OUTER JOIN stats ON stats.id = stands.id \
+      WHERE stands.id = ($1) LIMIT 1'; // note LIMIT 1 sanity check (we only expect 1 anyway)
 
     var preProcess = function (rows) {
       var stand = rows[0];
