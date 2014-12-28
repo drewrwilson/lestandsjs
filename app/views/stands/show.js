@@ -17,8 +17,6 @@ var app = app || {};
             stand: this.model.attributes
           }
 
-          window.updates = view.stand.updates;
-
           html = this.template(view);
           this.$el.html(html)
       },
