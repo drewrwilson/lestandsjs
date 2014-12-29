@@ -16,39 +16,18 @@ var app = app || {};
           },
       render: function(){
             // Compile the template using underscore
-            // todo this should be recalculated when the model changes, not when it is re-rendered.
+
+            //for calculating days since checked
+            var today = new Date();
+            var all = this.collection;
 
             var view = {
-              totalDistributed: 0,
-              totalUpdates: 0,
-              totalStands: 0,
-              daysSinceChecked: null,
-              stands:[]
-            }
-
-            var mostRecentUpdate = null;
-
-            //this calculates the totalDistributed, totalUpdates and totalStands
-            this.collection.each(function(stand){
-              stand = stand.attributes;
-              view.totalDistributed += stand.totalDistributed; //sum up total from each stand
-              view.totalUpdates += stand.totalUpdates; //sum up total from each stand
-              view.totalStands++; //count of number of stands
-              thisLastUpdated = stand.lastUpdateDate ? new Date(stand.lastUpdateDate): null;
-              //this block finds the most recent update
-              if (mostRecentUpdate == null) {
-                mostRecentUpdate = new Date(stand.lastUpdateDate);
-              } else if ( thisLastUpdated < mostRecentUpdate) {
-                mostRecentUpdate = thisLastUpdated;
-              }
-
-              view.stands.push(stand); //push another stand into the array
-
-            }, this);
-
-            //calculate days since checked
-            today = new Date();
-            view.daysSinceChecked = Math.floor((today - mostRecentUpdate) / (1000*60*60*24));
+              totalDistributed: all.getTotalDistributed(),
+              totalUpdates: all.getTotalUpdates(),
+              totalStands: all.getTotalStands(),
+              daysSinceChecked:  Math.floor((today - all.getLastUpdated()) / (1000*60*60*24)),
+              stands: _.pluck(all.models, 'attributes')
+            };
 
             html = this.template(view); //generate HTML from the template
             this.$el.html(html) //add html to the DOM

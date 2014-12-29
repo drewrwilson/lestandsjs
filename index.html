@@ -136,7 +136,7 @@
                               <i class="fa fa-calendar"></i>
                           </div>
                           <div class="value">
-                              <h1>{{ daysSinceChecked }}</h1>
+                              <h1>{{ daysSince lastUpdateDate }}</h1>
                               <p>Days since last checked</p>
                           </div>
                       </section>
@@ -166,12 +166,12 @@
                                 <img src="assets/img/example-stand.jpg" width="150px" class="img-rounded thumbnail">
                               </div>
                               <div class="col-xs-10">
-                                <h2>{{stand.name}}</h2>
+                                <h2>{{name}}</h2>
                                 <p>
                                   {{description}}
                                 </p>
                                 <br />
-                                <span class="muted hidden-sm hidden-xs" style="font-style:italic; font-size:90%;">{{stand.description}}</span>
+                                <span class="muted hidden-sm hidden-xs" style="font-style:italic; font-size:90%;">{{description}}</span>
                               </div>
                             </div>
                             <hr>
@@ -196,7 +196,7 @@
                                   </tr>
                                   </thead>
                                   <tbody>
-                                  {{#each stand.updates}}
+                                  {{#each updates}}
                                     <tr>
                                         <td>{{longDate date}}</td>
                                         <td>{{amountWhenChecked}}</td>
@@ -494,7 +494,7 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--app scripts Models, etc-->
-    <script src="app/models/stands.js"></script>
+    <script src="app/models/stand.js"></script>
 		<script src="app/collections/stands.js"></script>
 
     <!--app Views -->
