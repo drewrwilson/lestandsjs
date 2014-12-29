@@ -25,7 +25,7 @@ var app = app || {};
               totalDistributed: all.getTotalDistributed(),
               totalUpdates: all.getTotalUpdates(),
               totalStands: all.getTotalStands(),
-              daysSinceChecked:  Math.floor((today - all.getLastUpdated()) / (1000*60*60*24)),
+              lastUpdateDate: all.getLastUpdated(),
               stands: _.pluck(all.models, 'attributes')
             };
 
