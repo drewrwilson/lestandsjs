@@ -8,10 +8,22 @@ var app = app || {};
   app.StandView = Backbone.View.extend({
       template: Handlebars.compile( $("#single-stand-template").html() ),
       initialize: function(){
-          this.listenTo(this.model, 'reset', this.render);
+          // this.listenTo(this.model, 'reset', this.render);
+          // this.listenTo(this.model.updates, 'add', this.render);
+          // this.listenTo(this.model.updates, 'remove', this.render);
+          // this.listenTo(this.model.updates, 'change', this.render);
+          window.whatever = this.model.updates;
+          // this.listenTo(this.model.updates, 'all', this.render);
+          this.model.updates.on({
+            "all" : function () { console.log('IT TRIGGERED!')}
+          });
+          // this.listenTo(this.model, 'change', this.render);
+          // window.whatup = this.model.updates;
+          //this is where we need to have a listenTo event to rerender view after DELETE
           this.render();
       },
       render: function(){
+          console.log('called render');
           html = this.template(this.model.attributes);
           this.$el.html(html)
       },
@@ -29,8 +41,9 @@ var app = app || {};
 
         var stand = _.findWhere(app.stands.models, {id: standID});
         var update = _.findWhere(stand.updates.models, {id: updateID });
-        update.destroy();
-
+        stand.updates.remove(update);
+        stand.destroy();
+        // this.sync();
       }
   });
 
