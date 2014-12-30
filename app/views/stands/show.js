@@ -8,7 +8,6 @@ var app = app || {};
   app.StandView = Backbone.View.extend({
       template: Handlebars.compile( $("#single-stand-template").html() ),
       initialize: function(){
-          this.listenTo(this.model, 'reset', this.render);
           this.render();
       },
       render: function(){
@@ -29,8 +28,9 @@ var app = app || {};
 
         var stand = _.findWhere(app.stands.models, {id: standID});
         var update = _.findWhere(stand.updates.models, {id: updateID });
-        update.destroy();
-
+        stand.updates.remove(update);
+        stand.destroy();
+        // this.sync();
       }
   });
 
