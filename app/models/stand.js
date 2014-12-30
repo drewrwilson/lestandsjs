@@ -8,9 +8,10 @@ var app = app || {};
     updates: null,
     initialize: function () {
     	// Here is where we manage to build the nested url
-	    app.updates = new app.Updates({
+	    var updates = new app.Updates({
 	      standPath: this.url()
 	    });
+	    this.updates = updates;
     }
   });
 

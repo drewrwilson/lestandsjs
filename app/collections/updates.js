@@ -3,7 +3,7 @@ var app = app || {};
 
 (function () {
 
-  var Updates = Backbone.Collection.extend({
+  app.Updates = Backbone.Collection.extend({
       model: app.Update,
       url: function() {
         return this.baseUrl;

@@ -2,7 +2,7 @@
 var app = app || {};
 
 (function () {
-  app.models.Update = Backbone.Model.extend({
+  app.Update = Backbone.Model.extend({
     // url: function () {
     //   // /stands/:stand_id/updates/1
     //   return this.urlRoot;
