@@ -39,11 +39,11 @@ var app = app || {};
         //this console.log is a placeholder for where we need to trigger a json request that deletes an update with a given id
         console.log("deleteUpdate action triggered. Deleting update with id #" + updateID + ', on stand with id #' + standID);
 
-        var stand = _.findWhere(app.stands.models, {id: standID});
-        var update = _.findWhere(stand.updates.models, {id: updateID });
-        stand.updates.remove(update);
-        stand.destroy();
-        // this.sync();
+        var updates = app.stands.findWhere({id: standID}).updates;
+        var update = updates.findWhere({id: updateID});
+        console.log("remove + destroy update");
+        updates.remove(update);
+        update.destroy();
       }
   });
 
