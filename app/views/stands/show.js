@@ -8,7 +8,7 @@ var app = app || {};
   app.StandView = Backbone.View.extend({
       template: Handlebars.compile( $("#single-stand-template").html() ),
       initialize: function(){
-          this.on('updates:changed', this.render);
+          // this.on('updates:changed', this.render);
           this.render();
       },
       render: function(){
@@ -33,7 +33,7 @@ var app = app || {};
         console.log("remove + destroy update");
         updates.remove(update);
         update.destroy();
-        this.trigger('updates:changed');
+        // this.trigger('updates:changed');
       }
   });
 
