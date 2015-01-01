@@ -28,7 +28,8 @@ var app = app || {};
         //this console.log is a placeholder for where we need to trigger a json request that deletes an update with a given id
         console.log("deleteUpdate action triggered. Deleting update with id #" + updateID + ', on stand with id #' + standID);
 
-        var updates = app.stands.findWhere({id: standID}).updates;
+        // note that we must access the same object as was fetched by /stands/:id->show(),
+        var updates = app.updatesView.collection;
         var update = updates.findWhere({id: updateID});
         console.log("remove + destroy update");
         updates.remove(update);

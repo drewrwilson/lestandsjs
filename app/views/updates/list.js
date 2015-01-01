@@ -7,7 +7,8 @@ var app = app || {};
   app.UpdatesView = Backbone.View.extend({
       template: Handlebars.compile( $("#all-updates-template").html() ),
       initialize: function(){
-              this.listenTo(this.collection, 'reset', this.render);
+              this.listenTo(this.collection, 'add', this.render);
+              this.listenTo(this.collection, 'remove', this.render);
               this.render();
           },
       render: function(){
