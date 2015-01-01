@@ -20,6 +20,7 @@ var app = app || {};
           // this.listenTo(this.model, 'change', this.render);
           // window.whatup = this.model.updates;
           //this is where we need to have a listenTo event to rerender view after DELETE
+          this.on('updates:changed', this.render);
           this.render();
       },
       render: function(){
@@ -44,6 +45,7 @@ var app = app || {};
         console.log("remove + destroy update");
         updates.remove(update);
         update.destroy();
+        this.trigger('updates:changed');
       }
   });
 
