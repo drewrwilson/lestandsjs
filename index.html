@@ -201,18 +201,8 @@
                             </tr>
                           </tr>
                           </thead>
-                          <tbody>
-                          {{#each updates}}
-                            <tr>
-                                <td>{{longDate date}}</td>
-                                <td>{{amountWhenChecked}}</td>
-                                <td class="hidden-xs">{{amountAdded}}</td>
-                                <td class="hidden-xs">{{comments}}</td>
-                                <td class="text-center">
-                                  <a href="#" data-update-id="{{id}}" data-stand-id="{{../id}}" alt="delete an update" class="delete btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
-                                </td>
-                            </tr>
-                          {{/each}}
+                          <tbody id="updates-list">
+                            <!-- // UPDATES LIST IS INSERTED HERE -->
                           </tbody>
                       </table>
                       </section>
@@ -345,6 +335,26 @@
 
     ********************************************* -->
 
+    <!-- TEMPLATE FOR UPDATES LIST -->
+    <script id="all-updates-template" type="text/template">
+      {{#each updates}}
+      <tr>
+        <td>{{longDate date}}</td>
+        <td>{{amountWhenChecked}}</td>
+        <td class="hidden-xs">{{amountAdded}}</td>
+        <td class="hidden-xs">{{comments}}</td>
+        <td class="text-center">
+          <a href="#" data-update-id="{{id}}" data-stand-id="{{standID}}" alt="delete an update" class="delete btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+    </script>
+
+
+
+    <!-- *********************************************
+
+    ********************************************* -->
 
       <!-- THIS IS THE TEMPLATE FOR ADDING AN UPDATE -->
     <script id="add-update-template" type="text/template">
@@ -507,6 +517,7 @@
     <script src="app/views/stands/list.js"></script>
     <script src="app/views/stands/show.js"></script>
     <script src="app/views/stands/create.js"></script>
+    <script src="app/views/updates/list.js"></script>
     <script src="app/views/updates/create.js"></script>
 		<script src="app/views/app-view.js"></script>
 
