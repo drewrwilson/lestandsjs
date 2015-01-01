@@ -8,18 +8,6 @@ var app = app || {};
   app.StandView = Backbone.View.extend({
       template: Handlebars.compile( $("#single-stand-template").html() ),
       initialize: function(){
-          // this.listenTo(this.model, 'reset', this.render);
-          // this.listenTo(this.model.updates, 'add', this.render);
-          // this.listenTo(this.model.updates, 'remove', this.render);
-          // this.listenTo(this.model.updates, 'change', this.render);
-          window.whatever = this.model.updates;
-          // this.listenTo(this.model.updates, 'all', this.render);
-          this.model.updates.on({
-            "all" : function () { console.log('IT TRIGGERED!')}
-          });
-          // this.listenTo(this.model, 'change', this.render);
-          // window.whatup = this.model.updates;
-          //this is where we need to have a listenTo event to rerender view after DELETE
           this.on('updates:changed', this.render);
           this.render();
       },
