@@ -3,6 +3,8 @@ var app = app || {};
 
 (function ($) {
 
+  // documentation on forms and saving new models:
+  // http://dailyjs.com/2013/01/31/backbone-tutorial-10/ see "Editing Tasks"
   //view for adding an update
   app.AddUpdateView = Backbone.View.extend({
       template: Handlebars.compile( $("#add-update-template").html() ),
