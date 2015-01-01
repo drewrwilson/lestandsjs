@@ -13,25 +13,6 @@ var app = app || {};
       render: function(){
           html = this.template(this.model.attributes);
           this.$el.html(html)
-      },
-      events: {
-        "click a.delete": "deleteUpdate",
-      },
-      deleteUpdate: function(event) {
-        event.preventDefault();
-        var clicked = $(event.target);
-        var updateID = clicked.data('update-id');
-        var standID = clicked.data('stand-id');
-
-        //this console.log is a placeholder for where we need to trigger a json request that deletes an update with a given id
-        console.log("deleteUpdate action triggered. Deleting update with id #" + updateID + ', on stand with id #' + standID);
-
-        // note that we must access the same object as was fetched by /stands/:id->show(),
-        var updates = app.updatesView.collection;
-        var update = updates.findWhere({id: updateID});
-        console.log("remove + destroy update");
-        updates.remove(update);
-        update.destroy();
       }
   });
 
