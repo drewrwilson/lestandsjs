@@ -30,6 +30,9 @@ var app = app || {};
   //view for adding an update
   app.AddUpdateView = Backbone.View.extend({
       template: Handlebars.compile( $("#add-update-template").html() ),
+      events: {
+        'submit': 'submit'
+      },
       initialize: function(options){
               this.standID = options.standID || null;
               //this.listenTo(this.model, 'reset', this.render);
@@ -50,8 +53,14 @@ var app = app || {};
               $('.default-date-picker').datepicker();
             }});
         },
+      submit: function(e) {
+            e.preventDefault();
+            var attributes = $('form').serializeObject();
+            var model = new app.Update(attributes);
 
-
+            model.save();
+            return false;
+      },
   });
 
 })(jQuery);
