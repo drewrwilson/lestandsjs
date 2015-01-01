@@ -48,6 +48,7 @@ var app = app || {};
     addUpdate: function(id) {
       // this fetches the data from the url with the ID as param, and on success creates a new view
       app.addUpdateView = new app.AddUpdateView({
+        standID: parseInt(id),
         el: $("#main-container")
       });
     },
