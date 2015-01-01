@@ -6,15 +6,15 @@ var app = app || {};
   //view for all updates list
   app.UpdatesView = Backbone.View.extend({
       template: Handlebars.compile( $("#all-updates-template").html() ),
-      initialize: function(){
-              this.listenTo(this.collection, 'add', this.render);
-              this.listenTo(this.collection, 'remove', this.render);
-              this.render();
-          },
+      initialize: function () {
+        this.listenTo(this.collection, 'add', this.render);
+        this.listenTo(this.collection, 'remove', this.render);
+        this.render();
+      },
       events: {
         "click a.delete": "deleteUpdate",
       },
-      deleteUpdate: function(event) {
+      deleteUpdate: function (event) {
         event.preventDefault();
         var clicked = $(event.target);
         var updateID = clicked.data('update-id');
@@ -27,15 +27,15 @@ var app = app || {};
         updates.remove(update);
         update.destroy();
       },
-      render: function(){
-            // Compile the template using underscore
-            view = {
-              updates: _.pluck(this.collection.models, "attributes")
-            };
+      render: function () {
+        // Compile the template using underscore
+        view = {
+          updates: _.pluck(this.collection.models, "attributes")
+        };
 
-            html = this.template(view); //generate HTML from the template
-            this.$el.html(html) //add html to the DOM
-        }
+        html = this.template(view); //generate HTML from the template
+        this.$el.html(html) //add html to the DOM
+      }
   });
 
 })(jQuery);
