@@ -15,7 +15,6 @@ var app = app || {};
       "update":   "addUpdate",  // #/addupdate
     },
     index: function() {
-      // TodoApp.trigger('fetchTodos', 'completed');
       console.log("index view");
 
       //load dashboard
