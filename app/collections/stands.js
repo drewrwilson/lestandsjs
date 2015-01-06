@@ -13,7 +13,7 @@ var app = app || {};
       url: API_BASE + '/stands',
       model: app.Stand,
       initialize: function() {
-          this.fetch({reset: true});
+          this.fetch({reset: true, success: function() { this.fetched = true; /* flag for future checking */ }});
       },
       comparator: function(m) {
           // http://stackoverflow.com/questions/9540770/using-underscore-to-sort-a-collection-based-on-date

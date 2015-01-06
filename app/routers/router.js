@@ -15,7 +15,6 @@ var app = app || {};
       "update":   "addUpdate",  // #/addupdate
     },
     index: function() {
-      // TodoApp.trigger('fetchTodos', 'completed');
       console.log("index view");
 
       //load dashboard
@@ -25,7 +24,6 @@ var app = app || {};
       });
     },
     show: function(id) {
-      //right now id is hard-coded as 1 for testing. Change it to id when you're ready for real data.
       var singleStand = new app.Stand ({"id": id});
       //this fetches the data from the url with the ID as param, and on success creates a new view
       singleStand.fetch({
@@ -48,6 +46,7 @@ var app = app || {};
     addUpdate: function(id) {
       // this fetches the data from the url with the ID as param, and on success creates a new view
       app.addUpdateView = new app.AddUpdateView({
+        standID: parseInt(id),
         el: $("#main-container")
       });
     },
