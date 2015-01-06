@@ -74,6 +74,9 @@ Handlebars.registerHelper("labelFor", function(date) {
 */
 var app = app || {};
 
+// The base of the API
+var API_BASE = "https://lestands-api.herokuapp.com"
+
 $(document).ready(function(){
   var dispatcher = _.clone(Backbone.Events)
   Backbone.history.start();

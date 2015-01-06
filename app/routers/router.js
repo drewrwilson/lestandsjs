@@ -34,8 +34,16 @@ var app = app || {};
               el: $("#main-container"),
               model: singleStand,
             });
+
+            app.updatesView = new app.UpdatesView({
+              el: $("#updates-list"),
+              collection: singleStand.updates,
+            });
+            // options:
+            // 1) one global updates list that we filter
+            // 2) *set this on the fly on each stand view generation* <- for now do this
         }
-      })
+      });
     },
     addUpdate: function(id) {
       // this fetches the data from the url with the ID as param, and on success creates a new view

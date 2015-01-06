@@ -10,7 +10,7 @@ var app = app || {};
   };
 
   var Stands = Backbone.Collection.extend({
-      url: 'https://lestands-api.herokuapp.com/stands',
+      url: API_BASE + '/stands',
       model: app.Stand,
       initialize: function() {
           this.fetch({reset: true});

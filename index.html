@@ -201,18 +201,8 @@
                             </tr>
                           </tr>
                           </thead>
-                          <tbody>
-                          {{#each updates}}
-                            <tr>
-                                <td>{{longDate date}}</td>
-                                <td>{{amountWhenChecked}}</td>
-                                <td class="hidden-xs">{{amountAdded}}</td>
-                                <td class="hidden-xs">{{comments}}</td>
-                                <td class="text-center">
-                                  <a href="#" data-update-id="{{id}}" data-stand-id="{{../id}}" alt="delete an update" class="delete btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
-                                </td>
-                            </tr>
-                          {{/each}}
+                          <tbody id="updates-list">
+                            <!-- // UPDATES LIST IS INSERTED HERE -->
                           </tbody>
                       </table>
                       </section>
@@ -345,6 +335,26 @@
 
     ********************************************* -->
 
+    <!-- TEMPLATE FOR UPDATES LIST -->
+    <script id="all-updates-template" type="text/template">
+      {{#each updates}}
+      <tr>
+        <td>{{longDate date}}</td>
+        <td>{{amountWhenChecked}}</td>
+        <td class="hidden-xs">{{amountAdded}}</td>
+        <td class="hidden-xs">{{comments}}</td>
+        <td class="text-center">
+          <a href="#" data-update-id="{{id}}" alt="delete an update" class="delete btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+    </script>
+
+
+
+    <!-- *********************************************
+
+    ********************************************* -->
 
       <!-- THIS IS THE TEMPLATE FOR ADDING AN UPDATE -->
     <script id="add-update-template" type="text/template">
@@ -494,21 +504,25 @@
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
 
+    <script src="app/app.js"></script>
+    <script src="app/routers/router.js"></script>
+
     <!--app scripts Models, etc-->
     <script src="app/models/stand.js"></script>
+    <script src="app/models/update.js"></script>
 		<script src="app/collections/stands.js"></script>
+    <script src="app/collections/updates.js"></script>
 
     <!--app Views -->
     <script src="app/views/stands/list.js"></script>
     <script src="app/views/stands/show.js"></script>
     <script src="app/views/stands/create.js"></script>
+    <script src="app/views/updates/list.js"></script>
     <script src="app/views/updates/create.js"></script>
 		<script src="app/views/app-view.js"></script>
 
-    <script src="app/routers/router.js"></script>
 
 
-    <script src="app/app.js"></script>
 
 
   </body>
