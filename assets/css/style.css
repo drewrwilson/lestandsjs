@@ -1123,3 +1123,25 @@ tr.odd.gradeX td.sorting_1, tr.even.gradeX td.sorting_1, table.display tr.even.g
   width: 100%;
   height:300px;
 }
+
+/* style the placeholder text */
+
+::-webkit-input-placeholder {
+  color: #BDBCBA !important;
+  font-style: italic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #BDBCBA !important;
+  font-style: italic;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #BDBCBA !important;
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  color: #BDBCBA !important;
+  font-style: italic;
+}
