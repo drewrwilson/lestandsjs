@@ -11,6 +11,8 @@ var app = app || {};
 	    });
 	    this.updates = updates;
 
+      // when updates are updated, update the stats!
+      this.listenTo(this.updates, 'add remove', this.tally);
     },
 
     // Tally up the updates and reset the summary values

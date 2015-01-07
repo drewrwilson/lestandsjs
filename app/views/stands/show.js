@@ -8,6 +8,7 @@ var app = app || {};
   app.StandView = Backbone.View.extend({
       template: Handlebars.compile( $("#single-stand-template").html() ),
       initialize: function(){
+          this.listenTo(this.model, 'change', this.render);
           this.render();
       },
       render: function(){
