@@ -3,12 +3,6 @@ var app = app || {};
 
 (function () {
 
-  var sumAttribute = function(collection, attribute) {
-    return _.reduce(collection.models, function(memo, model) {
-          return memo + model.attributes[attribute];
-        }, 0);
-  };
-
   var Stands = Backbone.Collection.extend({
       url: API_BASE + '/stands',
       model: app.Stand,
@@ -19,8 +13,8 @@ var app = app || {};
           // http://stackoverflow.com/questions/9540770/using-underscore-to-sort-a-collection-based-on-date
           return (new Date(m.get('lastUpdateDate'))).getTime();
       },
-      getTotalDistributed: function() { return sumAttribute(this, 'totalDistributed'); },
-      getTotalUpdates: function () { return sumAttribute(this, 'totalUpdates'); },
+      getTotalDistributed: function() { return app.sumAttribute(this, 'totalDistributed'); },
+      getTotalUpdates: function () { return app.sumAttribute(this, 'totalUpdates'); },
       getTotalStands: function () { return this.models.length; },
       getLastUpdated: function() {
           var updateDates = _.map(this.models, function(model) { return new Date(model.attributes.lastUpdateDate); });

@@ -74,6 +74,12 @@ Handlebars.registerHelper("labelFor", function(date) {
 */
 var app = app || {};
 
+app.sumAttribute = function(collection, attribute) {
+    return collection.reduce(function(memo, model) {
+          return memo + model.get(attribute);
+        }, 0);
+  };
+
 // The base of the API
 var API_BASE = "https://lestands-api.herokuapp.com"
 
