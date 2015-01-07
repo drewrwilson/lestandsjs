@@ -16,6 +16,12 @@ var app = app || {};
       comparator: function(m) {
           // http://stackoverflow.com/questions/9540770/using-underscore-to-sort-a-collection-based-on-date
           return (new Date(m.get('date'))).getTime();
+      },
+      getTotalDistributed: function() { return app.sumAttribute(this, 'amountAdded'); },
+      getTotalUpdates: function () { return this.length; },
+      getLastUpdated: function() {
+          var updateDates = this.map(function(model) { return new Date(model.get('date')); });
+          return _.max(updateDates);
       }
   });
 
