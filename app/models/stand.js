@@ -10,6 +10,18 @@ var app = app || {};
 	      standPath: this.url()
 	    });
 	    this.updates = updates;
+
+    },
+
+    // Tally up the updates and reset the summary values
+    // when we change the updates, this can be used instead of
+    // sync()ing over the 'net.
+    tally: function() {
+      this.set({
+        totalDistributed: this.updates.getTotalDistributed(),
+        totalUpdates: this.updates.getTotalUpdates(),
+        lastUpdateDate: this.updates.getLastUpdated(),
+      });
     }
   });
 
