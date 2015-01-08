@@ -48,7 +48,15 @@ SELECT id AS "standID", '12-1-2014', 0, 250, '' FROM stands;
 --
 INSERT INTO "updates" ("standID", "date", "amountWhenChecked", "amountAdded", "comments") VALUES
   ('1', 'December 24, 2014', '100', '200', ''),
+  ('25', 'January 4, 2014', '100', '200', ''),
+  ('28', 'December 24, 2014', '100', '200', ''),
+  ('26', 'December 24, 2014', '100', '200', ''),
   ('2', 'December 16, 2014', '100', '200', ''),
+  ('7', 'December 16, 2014', '100', '200', ''),
+  ('9', 'December 16, 2014', '100', '200', ''),
+  ('21', 'December 16, 2014', '100', '200', ''),
+  ('15', 'December 16, 2014', '100', '200', ''),
+  ('11', 'December 16, 2014', '100', '200', ''),
   ('3', 'December 1, 2014', '100', '200', ''),
   ('1', 'March 15, 2014', '15', '80', 'the sticker is coming off'),
   ('1', 'June 11, 2014', '45', '30', ''),
