@@ -138,7 +138,7 @@ server.get('/stands', function (req, res, next) {
     )\
   SELECT stands.id, stands.name, stands.description, stands."geoLat", stands."geoLong", \
          stands.address1, stands.address2, stands.city, stands.state, stands.zip, \
-         stats."lastUpdateDate", stats."totalDistributed", stats."totalUpdates" \
+         stats."lastUpdateDate", COALESCE(stats."totalDistributed",0) AS "totalDistributed", COALESCE(stats."totalUpdates",0) AS "totalUpdates" \
   FROM stands LEFT OUTER JOIN stats ON stats.id = stands.id \
   ORDER BY id;';
 
@@ -169,7 +169,7 @@ server.get('/stands/:standID', function (req, res, next) {
       )\
       SELECT stands.id, stands.name, stands.description, stands."geoLat", stands."geoLong", \
              stands.address1, stands.address2, stands.city, stands.state, stands.zip, \
-             stats."lastUpdateDate", stats."totalDistributed", stats."totalUpdates" \
+             stats."lastUpdateDate", COALESCE(stats."totalDistributed",0) AS "totalDistributed", COALESCE(stats."totalUpdates",0) AS "totalUpdates" \
       FROM stands LEFT OUTER JOIN stats ON stats.id = stands.id \
       WHERE stands.id = ($1) LIMIT 1'; // note LIMIT 1 sanity check (we only expect 1 anyway)
 
