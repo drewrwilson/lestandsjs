@@ -40,13 +40,16 @@ INSERT INTO stands ("name","geoLat","geoLong","city","state", "type") VALUES
 -- Initial updates for all stands (each one getting 250 pieces of lit)
 --
 INSERT INTO updates ("standID", "date", "amountWhenChecked", "amountAdded", "comments")
-SELECT id AS "standID", '1-1-2014', 0, 250, '' FROM stands;
+SELECT id AS "standID", '12-1-2014', 0, 250, '' FROM stands;
 
 
 --
 -- Plus some specific updates
 --
 INSERT INTO "updates" ("standID", "date", "amountWhenChecked", "amountAdded", "comments") VALUES
+  ('1', 'December 24, 2014', '100', '200', ''),
+  ('2', 'December 16, 2014', '100', '200', ''),
+  ('3', 'December 1, 2014', '100', '200', ''),
   ('1', 'March 15, 2014', '15', '80', 'the sticker is coming off'),
   ('1', 'June 11, 2014', '45', '30', ''),
   ('1', 'April 1, 2008', '0', '50', 'Just started'),
