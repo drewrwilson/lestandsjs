@@ -43,9 +43,9 @@ Handlebars.registerHelper("iconFor", function(date) {
   switch (true) {
     case numDaysSince <= 7:
       return 'fa-heart';
-    case numDaysSince <= 21:
+    case numDaysSince <= 28:
       return 'fa-check';
-    case numDaysSince > 21:
+    case numDaysSince > 42:
       return 'fa-warning';
   }
 });
