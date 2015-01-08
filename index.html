@@ -112,7 +112,7 @@
                       <i class="fa fa-calendar"></i>
                   </div>
                   <div class="value">
-                      <h1>{{ daysSince lastUpdateDate }}</h1>
+                      <h1>{{ daysSinceHeader lastUpdateDate }}</h1>
                       <p>Days since last checked</p>
                   </div>
               </section>
@@ -232,7 +232,7 @@
                       <i class="fa fa-calendar"></i>
                   </div>
                   <div class="value">
-                      <h1>{{ daysSince lastUpdateDate }}</h1>
+                      <h1>{{ daysSinceHeader lastUpdateDate }}</h1>
                       <p>Days since last checked</p>
                   </div>
               </section>
@@ -278,7 +278,7 @@
                                 <td class=" text-center"><time title="{{lastUpdateDate}}" datetime="{{lastUpdateDate}}" class="label
                                   {{labelFor lastUpdateDate}}">
                                   <i class="fa {{iconFor lastUpdateDate}}"></i>
-                                  {{daysSince lastUpdateDate }} days</time></td>
+                                  {{daysSinceInline lastUpdateDate }}</time></td>
                                 <td><a href="#/stands/{{id}}">{{name}}</a></td>
                                 <td class="hidden-xs">{{description}}</td>
                                 <td class="text-center">
