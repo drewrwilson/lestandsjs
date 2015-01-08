@@ -37,9 +37,6 @@ var daysSince = function(date) {
   return Math.floor( (today - givenDate) / (1000 * 60 * 60 * 24));
 }
 
-//this assumes we get a valid date string, returns days since a given date
-Handlebars.registerHelper("daysSince", daysSince);
-
 Handlebars.registerHelper("iconFor", function(date) {
   var numDaysSince = daysSince(date);
 
@@ -79,6 +76,24 @@ app.sumAttribute = function(collection, attribute) {
           return memo + model.get(attribute);
         }, 0);
   };
+
+app.lib = {
+  daysSinceInline: function(date) {
+  if (date == -Infinity || date === null) { return "never"; }
+  return daysSince(date) + " days";
+  },
+
+  daysSinceHeader: function(date) {
+    if (date == -Infinity || date === null) { return "n/a"; }
+    return daysSince(date);
+  }
+}
+
+//this assumes we get a valid date string, returns days since a given date
+Handlebars.registerHelper("daysSince", daysSince);
+Handlebars.registerHelper("daysSinceInline", app.lib.daysSinceInline);
+Handlebars.registerHelper("daysSinceHeader", app.lib.daysSinceHeader);
+
 
 // The base of the API
 var API_BASE = "https://lestands-api.herokuapp.com"
