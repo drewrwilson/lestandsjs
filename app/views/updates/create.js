@@ -36,7 +36,6 @@ var app = app || {};
       initialize: function(options){
               this.standID = options.standID || null;
               //this.listenTo(this.model, 'reset', this.render);
-              this.render();
           },
       render: function () {
             updateView = this;

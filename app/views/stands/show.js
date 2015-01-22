@@ -15,8 +15,6 @@ var app = app || {};
             // collection: singleStand.updates,
             collection: this.model.updates,
           });
-
-          this.render();
       },
       render: function(){
           html = this.template(this.model.attributes);
