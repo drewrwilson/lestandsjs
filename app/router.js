@@ -43,7 +43,7 @@ var app = app || {};
       if (typeof app.standsView === typeof void 0 || !app.standsView) {
         // create view for first time
         app.standsView = new app.StandsView({
-          el: $("#main-container"),
+          id: "show-stands",
           collection: app.stands,
         });
       }
@@ -60,7 +60,7 @@ var app = app || {};
         singleStand.fetch({
           success: function (singleStand) {
               app.singleStandView = new app.StandView({
-                el: $("#main-container"),
+                id: 'show-stand',
                 model: singleStand,
               });
 
@@ -75,14 +75,14 @@ var app = app || {};
     addUpdate: function(id) {
       app.addUpdateView = new app.AddUpdateView({
         standID: parseInt(id),
-        el: $("#main-container")
+        id: "add-update"
       });
     },
     createStand: function() {
       if (typeof app.addStandView === typeof void 0 || !app.addStandView) {
         // create view for first time
         app.addStandView = new app.AddStandView({
-          el: $("#main-container")
+          id: "create-stand"
         });
       }
       this.switchView(app.addStandView);
@@ -94,7 +94,7 @@ var app = app || {};
       singleStand.fetch({
         success: function (singleStand) {
           app.addStandView = new app.AddStandView({
-            el: $("#main-container"),
+            id: "edit-stand",
             model: singleStand,
           });
         }
