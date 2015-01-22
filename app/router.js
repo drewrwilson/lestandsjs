@@ -23,6 +23,10 @@ var app = app || {};
     currentView: null,
 
     switchView: function(view) {
+      if (this.currentView && this.currentView === view) {
+        return; // Nothing to do; view already loaded.
+      }
+
       if (this.currentView) {
         // Detach the old view
         this.currentView.remove();
