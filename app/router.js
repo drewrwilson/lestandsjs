@@ -14,7 +14,7 @@ var app = app || {};
       "stands":   "index",  // #stands
       "stands/create":   "createStand",  // #stands/create
       "stands/:id/edit":   "editStand",  // #stands/1/edit
-      "stands/:id":   "show",  // #stands/1
+      "stands/:id":   "showStand",  // #stands/1
       "stands/:id/update":   "addUpdate",  // #stands/1/update
       "updates/add":   "addUpdate",  // #/updates/add
       "update":   "addUpdate",  // #/addupdate
@@ -55,7 +55,7 @@ var app = app || {};
       this.switchView(app.standsView);
     },
 
-    show: function(id) {
+    showStand: function(id) {
       if (app.singleStandView) {
         this.switchView(app.singleStandView);
       } else {
