@@ -77,6 +77,7 @@ var app = app || {};
         standID: parseInt(id),
         id: "add-update"
       });
+      this.switchView(app.addUpdateView);
     },
     createStand: function() {
       if (typeof app.addStandView === typeof void 0 || !app.addStandView) {
@@ -97,6 +98,8 @@ var app = app || {};
             id: "edit-stand",
             model: singleStand,
           });
+
+          app.router.switchView(app.addStandView);
         }
       })
     },
