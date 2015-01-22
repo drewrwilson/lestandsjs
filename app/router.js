@@ -5,8 +5,8 @@ var app = app || {};
 
   var Workspace = Backbone.Router.extend({
 
-    initialize: function(el) {
-      this.el = el;
+    initialize: function($el) {
+      this.$el = $el;
     },
 
     routes: {
@@ -29,7 +29,7 @@ var app = app || {};
       }
 
       // Move the view element into the DOM (replacing the old content)
-      this.el.html(view.el);
+      this.$el.html(view.el);
 
       // Render view after it is in the DOM (styles are applied)
       view.render();
