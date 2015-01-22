@@ -4,6 +4,11 @@ var app = app || {};
 (function () {
 
   var Workspace = Backbone.Router.extend({
+
+    initialize: function(el) {
+      this.el = el;
+    },
+
     routes: {
       "":   "index",  // #stands
       "stands":   "index",  // #stands
@@ -14,26 +19,58 @@ var app = app || {};
       "updates/add":   "addUpdate",  // #/updates/add
       "update":   "addUpdate",  // #/addupdate
     },
-    index: function() {
-      console.log("index view");
 
-      //load dashboard
-      app.standsView = new app.StandsView({
-        el: $("#main-container"),
-        collection: app.stands,
-      });
+    currentView: null,
+
+    switchView: function(view) {
+      if (this.currentView) {
+        // Detach the old view
+        this.currentView.remove();
+      }
+
+      // Move the view element into the DOM (replacing the old content)
+      this.el.html(view.el);
+
+      // Render view after it is in the DOM (styles are applied)
+      view.render();
+
+      this.currentView = view;
     },
+
+    index: function() {
+      //load dashboard
+      console.log("index view");
+      if (typeof app.standsView === typeof void 0 || !app.standsView) {
+        // create view for first time
+        app.standsView = new app.StandsView({
+          el: $("#main-container"),
+          collection: app.stands,
+        });
+      }
+
+      this.switchView(app.standsView);
+    },
+
     show: function(id) {
-      var singleStand = new app.Stand ({"id": id});
-      //this fetches the data from the url with the ID as param, and on success creates a new view
-      singleStand.fetch({
-        success: function (singleStand) {
-            app.singleStandView = new app.StandView({
-              el: $("#main-container"),
-              model: singleStand,
-            });
-        }
-      });
+      if (app.singleStandView) {
+        this.switchView(app.singleStandView);
+      } else {
+        var singleStand = new app.Stand ({"id": id});
+        //this fetches the data from the url with the ID as param, and on success creates a new view
+        singleStand.fetch({
+          success: function (singleStand) {
+              app.singleStandView = new app.StandView({
+                el: $("#main-container"),
+                model: singleStand,
+              });
+
+              // options:
+              // 1) one global updates list that we filter
+              // 2) *set this on the fly on each stand view generation* <- for now do this
+              app.router.switchView(app.singleStandView);
+          }
+        });
+      }
     },
     addUpdate: function(id) {
       app.addUpdateView = new app.AddUpdateView({
@@ -42,9 +79,13 @@ var app = app || {};
       });
     },
     createStand: function() {
-      app.addStandView = new app.AddStandView({
-        el: $("#main-container")
-      });
+      if (typeof app.addStandView === typeof void 0 || !app.addStandView) {
+        // create view for first time
+        app.addStandView = new app.AddStandView({
+          el: $("#main-container")
+        });
+      }
+      this.switchView(app.addStandView);
     },
     editStand: function(id) {
       var singleStand = new app.Stand ({"id": id});
@@ -61,6 +102,6 @@ var app = app || {};
     },
   });
 
-  app.router = new Workspace;
+  app.router = new Workspace($('#main-container'));
 
 })();

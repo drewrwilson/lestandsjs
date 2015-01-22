@@ -59,6 +59,7 @@ var app = app || {};
             var model = new app.Update(attributes);
 
             model.save();
+            app.router.show(); // jump back to stand BUG NOT WORKING
             return false;
       },
   });

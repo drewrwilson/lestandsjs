@@ -10,11 +10,11 @@ var app = app || {};
       initialize: function(){
           this.listenTo(this.model, 'change', this.render);
 
-          // set up the subview
-          this.updatesView = new app.UpdatesView({
-              el: $("#updates-list"),
-              collection: this.model.updates,
-            });
+          app.updatesView = new app.UpdatesView({
+            el: this.$("#updates-list"),
+            // collection: singleStand.updates,
+            collection: this.model.updates,
+          });
 
           this.render();
       },
@@ -22,7 +22,7 @@ var app = app || {};
           html = this.template(this.model.attributes);
           this.$el.html(html);
 
-          this.updatesView.setElement(this.$('#updates-list')).render();
+          app.updatesView.setElement(this.$('#updates-list')).render();
 
           return this;
       }
