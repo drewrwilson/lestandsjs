@@ -12,6 +12,8 @@ var app = app || {};
       initialize: function(options) {
         this.baseUrl = options.standPath + '/updates';
         this.fetch({reset: true});
+        this.stand = options.stand;
+        this.listenTo(Backbone, "update:created", this.maybeAddUpdate);
       },
       comparator: function(m) {
           // http://stackoverflow.com/questions/9540770/using-underscore-to-sort-a-collection-based-on-date
@@ -22,6 +24,12 @@ var app = app || {};
       getLastUpdated: function() {
           var updateDates = this.map(function(model) { return new Date(model.get('date')); });
           return _.max(updateDates);
-      }
+      },
+      maybeAddUpdate: function(update, standId) {
+        // compare and add if it belongs to this same stand
+        if (standId === this.stand.id) {
+          this.add(update);
+        }
+      },
   });
 })();
