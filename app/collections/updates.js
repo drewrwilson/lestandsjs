@@ -11,8 +11,8 @@ var app = app || {};
 
       initialize: function(options) {
         this.baseUrl = options.standPath + '/updates';
-        this.fetch({reset: true});
         this.stand = options.stand;
+        this.fetch();
         this.listenTo(Backbone, "update:created", this.maybeAddUpdate);
       },
       comparator: function(m) {
