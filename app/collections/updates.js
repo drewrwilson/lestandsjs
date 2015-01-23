@@ -24,6 +24,4 @@ var app = app || {};
           return _.max(updateDates);
       }
   });
-
-  // app.updates = new Updates();
 })();
