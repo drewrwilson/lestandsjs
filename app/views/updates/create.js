@@ -36,7 +36,6 @@ var app = app || {};
       initialize: function(options){
               this.standID = options.standID || null;
               //this.listenTo(this.model, 'reset', this.render);
-              this.render();
           },
       render: function () {
             updateView = this;
@@ -59,6 +58,12 @@ var app = app || {};
             var model = new app.Update(attributes);
 
             model.save();
+
+            // we save the model but it has no effect on a local collection yet.
+            // so, trigger an event that the collection listens for to manually add it.
+            Backbone.trigger("update:created", model, this.standID)
+
+            app.router.navigate('#/stands/' + this.standID);
             return false;
       },
   });

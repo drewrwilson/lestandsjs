@@ -9,7 +9,6 @@ var app = app || {};
       initialize: function () {
         this.listenTo(this.collection, 'add', this.render);
         this.listenTo(this.collection, 'remove', this.render);
-        this.render();
       },
       events: {
         "click a.delete": "deleteUpdate",

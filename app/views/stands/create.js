@@ -7,7 +7,6 @@ var app = app || {};
       template: Handlebars.compile( $("#add-stand-template").html() ),
       initialize: function(){
               //this.listenTo(this.model, 'reset', this.render);
-              this.render();
           },
       render: function(){
         var attributes;
