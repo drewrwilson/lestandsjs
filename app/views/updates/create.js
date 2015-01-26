@@ -42,14 +42,20 @@ var app = app || {};
             app.stands.fetch({success: function () {
               var stand = app.stands.findWhere({id: updateView.standID});
 
+              var today = new Date();
+              var dd = today.getDate();
+              var mm = today.getMonth()+1; //January is 0!
+              var yyyy = today.getFullYear();
+
               view = {
                 standID: stand.id,
-                name: stand.get('name')
+                name: stand.get('name'),
+                date: "" + mm + "/" + dd + "/" + yyyy,
               };
 
               html = updateView.template(view);
               updateView.$el.html(html);
-              $('.default-date-picker').datepicker();
+              $('.default-date-picker').datepicker("setDate", today);
             }});
         },
       submit: function(e) {
